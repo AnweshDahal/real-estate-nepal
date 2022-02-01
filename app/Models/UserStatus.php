@@ -27,7 +27,7 @@ class UserStatus extends Model
     ];
 
     // Values that could be used for role
-    protected $ROLES = [
+    public const ROLES = [
         'admin' => 'admin',
         'user' => 'user'
     ];
