@@ -1,8 +1,28 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
+@import 'utility';
+@import 'header';
+@import 'footer';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+/**
+    Style Structure
+    [selector] {
+        [display]
+        [display properties: alignment etc..]
+        [position: top, right, left, right]
+        [size: width, height]
+        [background]
+        [text color]
+        [font]
+
+        &:[event]{
+            // same as above
+        }
+    }
+*/
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
