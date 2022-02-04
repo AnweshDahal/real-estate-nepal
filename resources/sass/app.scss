@@ -1,4 +1,21 @@
 // Variables
 @import 'variables';
+@import 'utility';
+@import 'header';
 
+/**
+    Style Structure
+    [selector] {
+        [display]
+        [display properties: alignment etc..]
+        [position: top, right, left, right]
+        [size: width, height]
+        [background]
+        [text color]
+        [font]
 
+        &:[event]{
+            // same as above
+        }
+    }
+*/
