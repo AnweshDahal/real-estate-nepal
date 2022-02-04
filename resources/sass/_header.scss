@@ -3,7 +3,9 @@ header {
     padding: 0.5rem;
     font-family: "Inter", sans-serif;
 
-    div {
+    .row {
+        width: 100%;
+        margin: 0px;
 
         nav, .account-controls {
             .nav-link{
