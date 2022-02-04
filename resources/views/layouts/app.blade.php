@@ -45,17 +45,33 @@
                     <a href="#" class="nav-link">Contact Us</a>
                 </nav>
                 <div class="brand-logo col-12 col-lg-4  d-flex align-items-center justify-content-center">
-                    <a href="#" class="brand-name">RealEstate <span class="text-blue">Nepal</span></a>
+                    <a href="#" class="brand-name">RealEstate <span class="text-theme-blue">Nepal</span></a>
                 </div>
-                <div class="account-controls col-12 col-lg-4 d-flex align-items-center justify-content-end">
-                    <a href="#" class="nav-link account-control-link">Sign Up</a>
-                    <a href="#" class="nav-link account-control-link">Sign In</a>
-                </div>
+                {{-- Displayed only if the route for login has been defined --}}
+                @if (Route::has('login'))
+                    <div class="account-controls col-12 col-lg-4 d-flex align-items-center justify-content-end">
+                        {{-- Displayed if a user has been authenticated --}}
+                        @auth
+                            <a href="{{ url('/home') }}"
+                                class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                        @else
+                            <a href="{{ route('login') }}" class="nav-link account-control-link">Sign Up</a>
+
+                            {{-- Displayed only if the route for Register has been defined --}}
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="nav-link account-control-link">Sign In</a>
+                            @endif
+                        @endauth
+                    </div>
+                @endif
             </div>
         </header>
         <section class="main">
             @yield('content')
         </section>
+        <footer>
+            
+        </footer>
     </div>
 
     <!-- Bootstrap Bundle -->
