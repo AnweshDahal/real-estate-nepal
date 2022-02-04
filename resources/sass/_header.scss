@@ -4,7 +4,6 @@ header {
     font-family: "Inter", sans-serif;
 
     .row {
-        width: 100%;
         margin: 0px;
 
         nav, .account-controls {
@@ -24,7 +23,6 @@ header {
             .brand-name{
                 color: $black;
                 font-family: 'Manrope', sans-serif;
-                font-weight: 800;
                 font-size: 2rem;
                 letter-spacing: -0.04em;
                 text-decoration: none;

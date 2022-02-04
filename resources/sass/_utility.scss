@@ -1,12 +1,53 @@
 // Utilities Classes
-.text-theme-blue{
+.text-theme-blue {
     color: $theme-blue;
 }
 
-.bg-theme-accent-1{
+.bg-theme-accent-1 {
     background-color: $theme-blue-accent-1;
 }
 
-.emoji{
+.emoji {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.row {
+    width: 100%;
+}
+
+// Font weight
+.thin {
+    font-weight: 100;
+}
+
+.extra-light {
+    font-weight: 200;
+}
+
+.light {
+    font-weight: 300;
+}
+
+.regular {
+    font-weight: 400;
+}
+
+.medium {
+    font-weight: 500;
+}
+
+.semi-bold {
+    font-weight: 600;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.extra-bold {
+    font-weight: 800;
+}
+
+.black {
+    font-weight: 900;
 }
