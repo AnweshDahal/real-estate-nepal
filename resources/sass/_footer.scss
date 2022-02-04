@@ -1,12 +1,12 @@
 footer {
     margin-top: auto;
-
     padding: 0px;
 
     .footer-top,
     .footer-bottom {
         font-family: Inter, sans-serif;
     }
+
     .footer-top {
         padding-inline: 20px;
         margin-bottom: 60px;
@@ -33,8 +33,6 @@ footer {
                             color: $dark;
                             text-decoration: none;
                         }
-
-                        
                     }
                 }
 
@@ -52,6 +50,7 @@ footer {
             }
         }
     }
+    
     .footer-bottom {
         height: 60px;
         p {
