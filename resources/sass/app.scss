@@ -2,6 +2,7 @@
 @import 'variables';
 @import 'utility';
 @import 'header';
+@import 'footer';
 
 /**
     Style Structure
@@ -19,3 +20,9 @@
         }
     }
 */
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
