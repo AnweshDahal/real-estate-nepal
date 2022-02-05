@@ -53,11 +53,11 @@
                     @auth
                         <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
                     @else
-                        <a href="{{ route('login') }}" class="nav-link account-control-link">Sign Up</a>
+                        <a href="{{ route('login') }}" class="nav-link account-control-link">Sign In</a>
 
                         {{-- Displayed only if the route for Register has been defined --}}
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="nav-link account-control-link">Sign In</a>
+                            <a href="{{ route('register') }}" class="nav-link account-control-link">Sign Up</a>
                         @endif
                     @endauth
                 </div>
