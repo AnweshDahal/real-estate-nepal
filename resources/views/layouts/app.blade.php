@@ -29,7 +29,7 @@
     <!-- Custom Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-    <title>{{ config('app.name', 'Real Estate Nepal') }}</title>
+    <title>@yield('title')</title>
 
 
 </head>
