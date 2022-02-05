@@ -1,13 +1,14 @@
 header {
     // Global style for header
     padding: 0.5rem;
-    font-family: "Inter", sans-serif;
+    @include default-font;
 
     .row {
         margin: 0px;
 
-        nav, .account-controls {
-            .nav-link{
+        nav,
+        .account-controls {
+            .nav-link {
                 padding: 0px 0.5rem;
                 color: $dark;
                 font-weight: 400;
@@ -19,10 +20,10 @@ header {
             }
         }
 
-        .brand-logo{
-            .brand-name{
+        .brand-logo {
+            .brand-name {
                 color: $black;
-                font-family: 'Manrope', sans-serif;
+                @include title-font;
                 font-size: 2rem;
                 letter-spacing: -0.04em;
                 text-decoration: none;
