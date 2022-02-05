@@ -1,0 +1,44 @@
+.login-container {
+    background-image: url("/img/backgrounds/login_bg.jpg");
+    background-size: cover;
+    background-position: 0% 50%;
+    padding: 10px;
+    @include default-font;
+
+    .container {
+        width: 90%;
+        margin: 100px auto;
+    }
+}
+
+.login-form-card {
+    width: 100%;
+    border: none;
+    overflow: hidden;
+}
+
+.login-graphics {
+    width: 300px;
+}
+
+.login-form-info {
+    background: $blue-gradient-1;
+    .login-message {
+        font-size: 1.75rem;
+        color: $light;
+    }
+}
+
+.login-form{
+    padding: 20px;
+    .form-title {
+        font-size: 1.1rem;
+    }
+
+    form {
+        width: 100%;
+        .form-group {
+            width: 100%;
+        }
+    }
+}

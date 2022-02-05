@@ -1,9 +1,13 @@
 .text-theme-blue {
-  color: #0066FF;
+  color: #0066ff;
+}
+
+.text-dark-red {
+  color: #c70000;
 }
 
 .bg-theme-accent-1 {
-  background-color: #0047B0;
+  background-color: #0047b0;
 }
 
 .emoji {
@@ -50,27 +54,89 @@
   font-weight: 900;
 }
 
+.btn-custom-success {
+  background-color: #b8ffbf;
+  color: #365731;
+}
+
+.btn-custom-theme-blue {
+  background-color: #0066ff;
+  color: #fff;
+}
+.btn-custom-theme-blue:hover {
+  color: #e0f6ff;
+}
+
+.form-control {
+  background-color: #e8f0fe;
+}
+
 header {
   padding: 0.5rem;
-  font-family: "Inter", sans-serif;
+  font-family: Inter, sans-serif;
 }
 header .row {
   margin: 0px;
 }
-header .row nav .nav-link, header .row .account-controls .nav-link {
+header .row nav .nav-link,
+header .row .account-controls .nav-link {
   padding: 0px 0.5rem;
   color: #292929;
   font-weight: 400;
 }
-header .row nav .nav-link:hover, header .row .account-controls .nav-link:hover {
-  color: #0066FF;
+header .row nav .nav-link:hover,
+header .row .account-controls .nav-link:hover {
+  color: #0066ff;
 }
 header .row .brand-logo .brand-name {
   color: #111;
-  font-family: "Manrope", sans-serif;
+  font-family: Manrope, sans-serif;
   font-size: 2rem;
   letter-spacing: -0.04em;
   text-decoration: none;
+}
+
+.login-container {
+  background-image: url("/img/backgrounds/login_bg.jpg");
+  background-size: cover;
+  background-position: 0% 50%;
+  padding: 10px;
+  font-family: Inter, sans-serif;
+}
+.login-container .container {
+  width: 90%;
+  margin: 100px auto;
+}
+
+.login-form-card {
+  width: 100%;
+  border: none;
+  overflow: hidden;
+}
+
+.login-graphics {
+  width: 300px;
+}
+
+.login-form-info {
+  background: linear-gradient(125.41deg, #0066ff 0%, #00b2ff 100%);
+}
+.login-form-info .login-message {
+  font-size: 1.75rem;
+  color: #fff;
+}
+
+.login-form {
+  padding: 20px;
+}
+.login-form .form-title {
+  font-size: 1.1rem;
+}
+.login-form form {
+  width: 100%;
+}
+.login-form form .form-group {
+  width: 100%;
 }
 
 footer {
@@ -109,10 +175,12 @@ footer .footer-top .row div .footer-links li a {
 }
 footer .footer-top .row div div .social-icons .social-icon {
   margin: 0px;
-}
-footer .footer-top .row div div .social-icons .social-icon img {
-  width: 1.5em;
+  font-size: 1.5rem;
   margin-right: 10px;
+  color: #292929;
+}
+footer .footer-top .row div div .social-icons .social-icon:hover {
+  color: #0066ff;
 }
 footer .footer-bottom {
   height: 60px;

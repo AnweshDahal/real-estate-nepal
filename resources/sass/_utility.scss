@@ -3,6 +3,10 @@
     color: $theme-blue;
 }
 
+.text-dark-red {
+    color: $dark-red;
+}
+
 .bg-theme-accent-1 {
     background-color: $theme-blue-accent-1;
 }
@@ -50,4 +54,22 @@
 
 .black {
     font-weight: 900;
+}
+
+.btn-custom-success {
+    background-color: $green-light;
+    color: $green-dark;
+}
+
+.btn-custom-theme-blue {
+    background-color: $theme-blue;
+    color: $light;
+
+    &:hover {
+        color: $light-blue;
+    }
+}
+
+.form-control{
+    background-color: $light-blue-2;
 }
