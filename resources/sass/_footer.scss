@@ -40,9 +40,12 @@ footer {
                     .social-icons{
                         .social-icon{
                             margin: 0px;
-                            img{
-                                width: 1.5em;
-                                margin-right: 10px;
+                            font-size: 1.5rem;
+                            margin-right: 10px;
+                            color: $dark;
+
+                            &:hover {
+                                color: $theme-blue;
                             }
                         }
                     }

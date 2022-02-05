@@ -25,6 +25,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -102,9 +105,9 @@
                     <div>
                         <div class="medium mb-2">Socials</div>
                         <div class="social-icons">
-                            <a href="#" class="social-icon"><img src="{{ asset('img/svg/instagram.svg') }}" alt="Instagram Icon"></a>
-                            <a href="#" class="social-icon"><img src="{{ asset('img/svg/twitter.svg') }}" alt="Twitter Icon"></a>
-                            <a href="#" class="social-icon"><img src="{{ asset('img/svg/facebook.svg') }}" alt="Facebook Icon"></a>
+                            <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
                         </div>
                     </div>
                 </div>
