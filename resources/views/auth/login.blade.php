@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    {{ 'Sign In to your Account | ' }}{{ config('app.name')}}}
+    {{ 'Sign In to your Account | ' }}{{ config('app.name') }}
 @endsection
 
 @section('content')
