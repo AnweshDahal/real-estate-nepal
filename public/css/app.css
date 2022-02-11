@@ -71,6 +71,10 @@
   background-color: #e8f0fe;
 }
 
+.condensed-4 {
+  letter-spacing: -0.04em;
+}
+
 header {
   padding: 0.5rem;
   font-family: Inter, sans-serif;
@@ -96,47 +100,78 @@ header .row .brand-logo .brand-name {
   text-decoration: none;
 }
 
-.login-container {
-  background-image: url("/img/backgrounds/login_bg.jpg");
+.login-container, .register-container {
   background-size: cover;
   background-position: 0% 50%;
   padding: 10px;
   font-family: Inter, sans-serif;
 }
-.login-container .container {
+.login-container .container, .register-container .container {
   width: 90%;
   margin: 100px auto;
 }
 
-.login-form-card {
+.login-form-card, .register-form-card {
   width: 100%;
   border: none;
   overflow: hidden;
 }
 
-.login-graphics {
+.login-graphics, .register-graphics {
   width: 300px;
 }
 
-.login-form-info {
+.login-form-info, .register-form-info {
   background: linear-gradient(125.41deg, #0066ff 0%, #00b2ff 100%);
 }
+
+.login-form, .register-form {
+  padding: 20px;
+}
+.login-form .form-title, .register-form .form-title {
+  font-size: 1.4rem;
+}
+.login-form form, .register-form form {
+  width: 100%;
+}
+.login-form form .form-group, .register-form form .form-group {
+  width: 100%;
+}
+
 .login-form-info .login-message {
   font-size: 1.75rem;
   color: #fff;
 }
 
-.login-form {
-  padding: 20px;
-}
 .login-form .form-title {
   font-size: 1.1rem;
 }
-.login-form form {
-  width: 100%;
+
+.login-container {
+  background-image: url("/img/backgrounds/login_bg.jpg");
 }
-.login-form form .form-group {
-  width: 100%;
+
+.register-container {
+  background-image: url("/img/backgrounds/register.jpg");
+}
+
+.register-form .form-title p {
+  font-size: 0.9rem;
+}
+
+.register-form-info .register-message {
+  color: #fff;
+  font-size: 1rem;
+}
+.register-form-info .register-message h3 {
+  font-size: 2rem;
+}
+.register-form-info .register-message div {
+  width: 58%;
+  margin: 10px auto;
+}
+.register-form-info .register-message div p {
+  text-align: justify;
 }
 
 footer {
