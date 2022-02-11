@@ -10,7 +10,7 @@
             <div class="card login-form-card">
                 <div class="row m-0">
                     <div class="col-12 col-md-12 col-lg-4 login-form">
-                        <div class="form-title semi-bold mb-3">Sign In to Your RealEstate Nepal Account</div>
+                        <div class="form-title semi-bold mb-3 condensed-4">Sign In to Your RealEstate Nepal Account</div>
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
 
