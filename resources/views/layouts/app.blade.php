@@ -54,7 +54,8 @@
                 <div class="account-controls col-12 col-lg-4 d-flex align-items-center justify-content-end">
                     {{-- Displayed if a user has been authenticated --}}
                     @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                        <a href="{{ url('/home') }}" class="nav-link mr-2">Home</a>
+                        <a href="{{ route('logout') }}" id="logout" class="nav-link" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">Sign Out</a>
                     @else
                         <a href="{{ route('login') }}" class="nav-link account-control-link">Sign In</a>
 
@@ -120,6 +121,11 @@
             </p>
         </div>
     </footer>
+    <div class="d-none">
+        <form action="{{ route('logout') }}" method="post" id="logoutForm">
+            @csrf
+        </form>
+    </div>
 
     <!-- Bootstrap Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
