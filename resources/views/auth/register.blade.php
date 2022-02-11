@@ -7,12 +7,13 @@
 @section('content')
     <div class="register-container d-flex align-items-center justify-content-center">
         <div class="container d-flex align-items-center justify-content center">
-            <div class="card register-form">
+            <div class="card register-form-card">
                 <div class="row m-0">
                     <div class="col-12 col-md-12 col-lg-5 register-form">
-                        <div class="form-title semi-bold mb-3">
+                        <div class="form-title semi-bold mb-3 condensed-4">
                             Create a Account
-                            <p class="text-muted">Create a Free Account and Start Lisitng</p>
+                            <p class="text-muted regular">Create a Free Account and Start Lisitng</p>
+                        </div>
                             <form action="{{ route('register') }}" method="POST">
                                 @csrf
                                 {{-- START: First, Middle, and Last Name --}}
@@ -161,20 +162,21 @@
                                     </a>
                                 </div>
                             </form>
-                        </div>
                     </div>
                     <div
                         class="col-12 col-md-12 col-lg-7 register-form-info d-flex align-items-center justify-content-center">
                         <div class="register-message">
-                            <h3 class="extra-light text-center">Welcome to RealEstate Nepal</h3>
-                            <p class="regular">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-                                ipsam quae deleniti natus nihil consequuntur veniam vel excepturi quia eaque non,
-                                consectetur possimus ullam, sed quibusdam tempore quod aliquid? Magnam dolorum, id
-                                incidunt
-                                alias repellendus recusandae doloribus nemo animi velit voluptatem neque itaque sunt
-                                iste
-                                assumenda odit molestiae reiciendis corporis.</p>
-                            <span class="mt-3 semi-bold">Sign Up Today</span>
+                            <h3 class="thin text-center">Welcome to RealEstate Nepal</h3>
+                            <div>
+                                <p class="light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+                                    ipsam quae deleniti natus nihil consequuntur veniam vel excepturi quia eaque non,
+                                    consectetur possimus ullam, sed quibusdam tempore quod aliquid? Magnam dolorum, id
+                                    incidunt
+                                    alias repellendus recusandae doloribus nemo animi velit voluptatem neque itaque sunt
+                                    iste
+                                    assumenda odit molestiae reiciendis corporis.</p>
+                                <span class="mt-3 medium">Sign Up Today</span>
+                            </div>
                         </div>
                     </div>
                 </div>
