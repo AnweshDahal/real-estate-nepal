@@ -17,8 +17,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                    @foreach ($properties as $property)
+                        @include('partials.propertyCard', $property)
+                    @endforeach
                 </div>
             </div>
         </div>
