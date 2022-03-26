@@ -1,0 +1,117 @@
+.property-card{
+    width: 360px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $gray;
+    border-radius: 0.3em;
+    @include default-font;
+    overflow: hidden;
+    .card-header{
+        .show-panel{
+            opacity: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #00000095;
+            transition: opacity ease-in-out 100ms;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            &:hover{
+                opacity: 100%;
+            }
+
+            .show-btn{
+                padding: 5px;
+                border: 1px solid $gray;
+                font-size: 0.85rem;
+                border-radius: 0.25em;
+                color: $gray;
+            }
+        }
+        width: 100%;
+        height: 210px;
+        background-size: cover;
+        position: relative;
+
+        .img{
+            height: 100%;
+            width: 100%;
+            z-index: -5;
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        .property-type{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: $green;
+            color: #fff;
+            font-size: 0.65rem;
+            padding: 4px;
+            border-radius: 0.25em;
+        }
+
+        .type{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 4px;
+            width: 100%;
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 500;
+            background: linear-gradient(89.96deg, rgba(0, 0, 0, 0.5) 0.03%, rgba(196, 196, 196, 0) 51.53%);;
+        }
+    }
+    .card-body{
+        padding: 10px;
+        .price{
+            display: flex;
+            font-size: 1rem;
+            font-weight: 700;
+            .blue{
+                margin-right: 5px;
+            }
+        }
+
+        .house-details-1{
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            .name{
+                font-size: 0.85rem;
+                margin-right: 10px;
+            }
+            .specs{
+                font-weight: 700;
+                font-size: 0.75rem;
+            }
+        }
+        .house-details-2{
+            color: $gray-1;
+            display: flex;
+            margin-top: 5px;
+            .address, .size{
+                display: flex;
+                align-items: center;
+                margin-right: 10px;
+                .material-icons-round{
+                    margin-right: 5px;
+                }
+            }
+            span{
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
