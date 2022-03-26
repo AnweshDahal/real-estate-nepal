@@ -18,6 +18,7 @@ class Image extends Model
     protected $fillable = [
         'property_id',
         'file_name',
+        'is_thumbnail',
     ];
 
     // Date attributes
