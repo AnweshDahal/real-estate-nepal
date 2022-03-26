@@ -26,7 +26,7 @@ class AddListingTypeColumnToPropertiesTable extends Migration
     public function down()
     {
         Schema::table('properties', function (Blueprint $table) {
-            $table->dropColumn('lsiting_type');
+            $table->dropColumn('listing_type');
         });
     }
 }
