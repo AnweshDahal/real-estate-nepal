@@ -238,8 +238,58 @@ textarea {
   resize: none;
 }
 
+.search-section {
+  width: 100%;
+  background-size: cover;
+  background-position: 0% 50%;
+  padding: 10px;
+  font-family: Inter, sans-serif;
+  background-image: url("/img/backgrounds/search-bg.jpg");
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.search-section form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-section form .searchbar {
+  display: flex;
+  width: 40%;
+  border-radius: 0.4em;
+  overflow: hidden;
+}
+.search-section form .searchbar .searchbar-text {
+  width: 95%;
+  padding: 15px;
+}
+.search-section form .searchbar .searchbar-text, .search-section form .searchbar .searchbar-btn {
+  border: none;
+  background-color: #fff;
+  outline: none;
+}
+.search-section form .searchbar .searchbar-btn {
+  width: 5%;
+  padding: 0px;
+  font-size: 1rem;
+  min-width: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.property-index-container {
+  width: 80%;
+  margin: 60px auto;
+  font-family: Inter, sans-serif;
+}
+
 .property-card {
-  width: 360px;
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -351,6 +401,11 @@ textarea {
 }
 .property-card .card-body .house-details-2 span {
   font-size: 0.8rem;
+}
+.property-card .card-body .house-details-2 .address, .property-card .card-body .house-details-2 .size {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .create-listing {
