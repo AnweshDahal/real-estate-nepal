@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE"> 
+    <meta http-equiv="PRAGMA" content="NO-CACHE"> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -59,7 +59,7 @@
                 <a href="#" class="nav-link">Contact Us</a>
             </nav>
             <div class="brand-logo col-12 col-lg-4  d-flex align-items-center justify-content-center">
-                <a href="" class="brand-name extra-bold">RealEstate <span class="text-theme-blue">Nepal</span></a>
+                <a href="{{ route('home') }}" class="brand-name extra-bold">RealEstate <span class="text-theme-blue">Nepal</span></a>
             </div>
             {{-- Displayed only if the route for login has been defined --}}
             @if (Route::has('login'))

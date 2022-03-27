@@ -228,20 +228,4 @@
             map.panTo(new L.LatLng(latitude, longitude));
         });
     </script>
-    {{-- <script type="text/javascript">
-        // Preview thumbnail
-        var imageUploadInput = document.getElementById('thumbnail');
-
-        imageUploadInput.addEventListener('change', (event) => {
-            let imagePreview = document.getElementById('thumbnail');
-
-            let reader = new FileReader();
-
-            reader.onload = (e) => {
-                $imageUploadInput.getAttribute('value');
-            }
-            
-            imagePreview
-        })
-    </script> --}}
 @endsection
