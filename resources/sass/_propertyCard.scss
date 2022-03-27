@@ -1,5 +1,5 @@
 .property-card{
-    width: 360px;
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -111,6 +111,12 @@
             }
             span{
                 font-size: 0.8rem;
+            }
+
+            .address, .size {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
     }
