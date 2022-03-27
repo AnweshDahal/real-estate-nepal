@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PropertyController;
+use App\Http\Controllers\GuestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [GuestController::class, 'index'])->name('guest.home');
+
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Property Routes
+Route::get('/property', [PropertyController::class, 'index'])->name('property.index');
+Route::get('/property/create', [PropertyController::class, 'create'])->name('property.create');
+Route::post('/property', [PropertyController::class, 'store'])->name('property.store');
+Route::get('/property/{property}', [PropertyController::class, 'show'])->name('property.show');

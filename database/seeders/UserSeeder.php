@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
                 'id' => 1,
                 'first_name' => 'Admin',
                 'last_name' => 'User',
-                'email' => 'admin@gmail.com.com',
+                'email' => 'admin@gmail.com',
                 'password' => bcrypt('password'),
                 'phone_number' => '9876543210',
             ], [
@@ -28,6 +28,7 @@ class UserSeeder extends Seeder
                 'last_name' => 'juan',
                 'email' => 'sum1@gmail.com',
                 'password' => bcrypt('password'),
+                'phone_number' => '9876543210',
             ]
         ];
 

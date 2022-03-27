@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <meta http-equiv="PRAGMA" content="NO-CACHE"> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -28,6 +29,14 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 
+    <!-- Leaflet.js -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -41,21 +50,26 @@
     <header>
         <div class="row">
             <nav class="col-12 col-lg-4 d-flex align-items-center">
-                <a href="#" class="nav-link">Buy</a>
-                <a href="#" class="nav-link">Rent</a>
+                @auth
+                    <a href="{{ url('/home') }}" class="nav-link mr-2">Home</a>
+                @endauth
+                <a href="{{ route('property.index', ['type' => 'buy']) }}" class="nav-link">Buy</a>
+                <a href="{{ route('property.index', ['type' => 'rent']) }}" class="nav-link">Rent</a>
                 <a href="#" class="nav-link">About Us</a>
                 <a href="#" class="nav-link">Contact Us</a>
             </nav>
             <div class="brand-logo col-12 col-lg-4  d-flex align-items-center justify-content-center">
-                <a href="#" class="brand-name extra-bold">RealEstate <span class="text-theme-blue">Nepal</span></a>
+                <a href="{{ route('home') }}" class="brand-name extra-bold">RealEstate <span class="text-theme-blue">Nepal</span></a>
             </div>
             {{-- Displayed only if the route for login has been defined --}}
             @if (Route::has('login'))
                 <div class="account-controls col-12 col-lg-4 d-flex align-items-center justify-content-end">
                     {{-- Displayed if a user has been authenticated --}}
                     @auth
-                        <a href="{{ url('/home') }}" class="nav-link mr-2">Home</a>
-                        <a href="{{ route('logout') }}" id="logout" class="nav-link" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">Sign Out</a>
+
+                        <a href="{{ route('property.create') }}" class="nav-link mr-2">Add Listing</a>
+                        <a href="{{ route('logout') }}" id="logout" class="nav-link"
+                            onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">Sign Out</a>
                     @else
                         <a href="{{ route('login') }}" class="nav-link account-control-link">Sign In</a>
 
@@ -131,6 +145,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
+
+    @yield('scripts')
 </body>
 
 </html>

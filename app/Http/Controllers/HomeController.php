@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Property;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $properties = Property::latest()->take(4)->with(['image' => function($query) {
+            $query->where('is_thumbnail', true);
+        }])->get();
+        return view('home', compact('properties'));
     }
 }

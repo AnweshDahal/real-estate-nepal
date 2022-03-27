@@ -1,0 +1,79 @@
+.show-page{
+    background-color: $gray;
+    @include default-font;
+    padding: 60px 0px;
+}
+.show-property-container {
+    margin: 0px auto;
+    width: 90% ;
+
+}
+
+.description-card{
+    padding: 1.5em;
+    margin-inline: 1em;
+    background-color: $gray;
+    border-radius: 0.4em;
+}
+
+.user-info{
+    display: flex;
+    flex-direction: column;
+    .profile-avatar{
+        width: 30%;
+        margin: 0 auto;
+        // text-align: center;
+        img {
+            width: 99%;
+            border-radius: 0.5em;
+        }
+    }
+    .user-details  {
+        display: inline-block;
+        width: 100%;
+        .username{
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+        
+    }
+}
+
+
+
+
+.property-thumbnail {
+    img {
+        width: 100%;
+        border-radius: 0.4em;
+        border: 3px solid $light;
+    }
+}
+
+.show-price {
+    font-size: 2rem;
+}
+
+.address-card{
+    background-color: red;
+}
+
+.comment-card{
+    .card-body {
+        .card-title {
+            font-size: 1.5rem;
+        }
+
+        .comment-form{
+            .form-group{
+                input[type=text]
+                {
+                    border: none;
+                    padding: 10px;
+                    border-bottom: 1px solid $gray;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
