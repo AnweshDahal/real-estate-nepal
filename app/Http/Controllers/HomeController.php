@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $properties = Property::latest()->with(['image' => function($query) {
+        $properties = Property::latest()->take(4)->with(['image' => function($query) {
             $query->where('is_thumbnail', true);
         }])->get();
         return view('home', compact('properties'));
