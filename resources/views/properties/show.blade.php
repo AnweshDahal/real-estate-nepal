@@ -80,34 +80,47 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-4">
-                <div class="col-12">
-                    
-                </div>
-            </div>
             <div class="row mt-3">
-                <div class="col-12">
+                <div class="col-12 col-md-12 col-lg-6">
                     <div class="card comment-card">
                         <div class="card-body">
                             <div class="card-title light">Comments</div>
                             <div class="comment-form">
-                                <form action="postComment()" class="mb-3">
+                                <form action={{ route('comment.store') }} method="POST" id="commentForm"
+                                    class="mb-3">
+                                    @csrf
+                                    <input type="hidden" name="property_id" id="property_id" value="{{ $property->id }}">
                                     <div class="form-group mb-3">
-                                        <input type="text" name="comment" id="comment">
+                                        <textarea name="comment" id="comment" class="comment" cols="30" rows="10"></textarea>
                                     </div>
-                                    <div class="form-group">
-                                        <input type="submit" value="Post" class="btn btn-custom-success w-100">
+                                    <div class="form-group w-100 button-wrapper">
+                                        <input type="submit" value="Post" class="btn btn-custom-success">
                                     </div>
                                 </form>
                             </div>
-                            <div class="comments">
-                                @if ($property->comments)
-                                    {{-- Do Something --}}
-                                    You've Got Comments
-                                @else
-                                    No Comments Yet!
-                                @endif
-                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 col-lg-6">
+                    <div class="w-100">
+                        <div class="comments">
+                            @if ($property->comments)
+                                @foreach ($property->comments as $comment)
+                                    <div class="card mb-3">
+                                        <div class="comment-details d-flex justify-content-between p-2">
+                                            <span class="commentor">{{ $comment->poster->fullName() }}</span>
+                                            <span class="comment-date text-muted medium">{{ Carbon\Carbon::parse($comment->created_at)->format('F d') }}</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>
+                                                {{ $comment->comment_text }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @else
+                                Be the first to comment!
+                            @endif
                         </div>
                     </div>
                 </div>
