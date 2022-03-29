@@ -53,6 +53,9 @@
                 @auth
                     <a href="{{ url('/home') }}" class="nav-link mr-2">Home</a>
                 @endauth
+                @if (!auth()->check())
+                    <a href="{{ route('guest.home') }}" class="nav-link mr-2">Home</a>
+                @endif
                 <a href="{{ route('property.index', ['type' => 'buy']) }}" class="nav-link">Buy</a>
                 <a href="{{ route('property.index', ['type' => 'rent']) }}" class="nav-link">Rent</a>
                 <a href="#" class="nav-link">About Us</a>

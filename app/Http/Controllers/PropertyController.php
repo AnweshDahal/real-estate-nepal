@@ -72,7 +72,6 @@ class PropertyController extends Controller
 
     public function show(Property $property){
         $thumbnail = Image::where('property_id', $property->id)->where('is_thumbnail', 1)->get();
-        $property->user;
 
         return view('properties.show', compact('property', 'thumbnail'));
     }

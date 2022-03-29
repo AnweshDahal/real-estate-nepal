@@ -471,11 +471,17 @@ textarea {
 .comment-card .card-body .card-title {
   font-size: 1.5rem;
 }
-.comment-card .card-body .comment-form .form-group input[type=text] {
-  border: none;
+.comment-card .card-body .comment-form .form-group .comment {
+  border: 0px;
   padding: 10px;
   border-bottom: 1px solid #eeeeee;
   width: 100%;
+  outline: none;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.comment-card .card-body .comment-form .button-wrapper {
+  text-align: right;
 }
 
 .map-container {

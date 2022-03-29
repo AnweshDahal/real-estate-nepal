@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Image;
 use App\Models\Locality;
 use App\Models\User;
+use App\Models\Comment;
 
 class Property extends Model
 {
@@ -65,5 +66,10 @@ class Property extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }

@@ -66,13 +66,20 @@
 
         .comment-form{
             .form-group{
-                input[type=text]
+                .comment
                 {
-                    border: none;
+                    border: 0px;
                     padding: 10px;
                     border-bottom: 1px solid $gray;
                     width: 100%;
+                    outline: none;
+                    display: flex;
+                    flex-direction: column-reverse;
                 }
+            }
+
+            .button-wrapper {
+                text-align: right;
             }
         }
     }
