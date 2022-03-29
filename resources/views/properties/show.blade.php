@@ -103,7 +103,7 @@
                 </div>
                 <div class="col-12 col-md-12 col-lg-6">
                     <div class="w-100">
-                        <div class="comments">
+                        <div class="comments d-flex flex-column-reverse">
                             @if ($property->comments)
                                 @foreach ($property->comments as $comment)
                                     <div class="card mb-3">

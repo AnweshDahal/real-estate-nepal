@@ -73,6 +73,8 @@
                     border-bottom: 1px solid $gray;
                     width: 100%;
                     outline: none;
+                    display: flex;
+                    flex-direction: column-reverse;
                 }
             }
 
