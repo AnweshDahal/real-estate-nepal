@@ -21,11 +21,12 @@
         <div class="house-details-2">
             <span class="address">
                 <i class="bi bi-geo-alt-fill"></i>
-                <span>{{ $address }}</span>
+                <span class="ms-1">{{ $address }}</span>
             </span>
             <span class="size">
                 <i class="bi bi-bounding-box-circles"></i>
-                <span>{{ $property_size }}</span>
+                <span class="ms-1">{{ $property_size }}</span>
+                <span class="ms-1">{{ App\Models\Property::UNITS[$unit] }}</span>
             </span>
         </div>
     </div>
