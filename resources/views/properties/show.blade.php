@@ -8,65 +8,71 @@
     <div class="show-page w-100">
         <div class="show-property-container">
             <div class="row mb-4">
-                <div class="col-8">
+                <div class="col-9">
                     <div class="card show-card p-2">
                         <span class="text-muted show-card-id light ms-3 mt-2">Property ID: <span
                                 class="medium">{{ $property->id }}</span></span>
                         <h1 class="thin text-center">{{ $property->property_name }}</h1>
                         <p class="semi-bold text-center
                     ">{{ $property->address }}</p>
-                        @if ($property->description)
-                            <p class="description-card">
-                                {{ $property->description }}
-                            </p>
-                        @else
-                            <p class="description-card">
-                                No Description Available
-                            </p>
-                        @endif
+                        <div class="row">
+                            <div class="col-12 col-md-12 col-lg-6 pe-0">
+                                @if ($property->description)
+                                    <p class="description-card">
+                                        {{ $property->description }}
+                                    </p>
+                                @else
+                                    <p class="description-card">
+                                        No Description Available
+                                    </p>
+                                @endif
+                            </div>
+                            <div class="col-12 col-md-12 col-lg-6 ps-0 pe-0">
+                                <div class="description-card mb-3 d-flex flex-column">
+                                    <span class="mb-1">
+                                        <span class="bold">Locality: </span>
+                                        {{ $property->locality->locality_name }}
+                                    </span>
+                                    <span class="mb-1">
+                                        <span class="bold">Size: </span> {{ $property->property_size }}
+                                        {{ App\Models\Property::UNITS[$property->unit] }}
+                                    </span>
+                                    <span>
+                                        <span class="bold">Price: </span> <span class="text-theme-blue medium">Rs.
+                                        </span>{{ $property->price }}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                @if (auth()->check())
-                    <div class="col-4">
-                        <div class="card uploader-information p-2">
-                            <span class="text-muted show-card-id light ms-3 mt-2">Uploader ID: <span
-                                    class="medium">{{ $property->user->id }}</span></span>
-                            <div class="user-info ms-3 mb-2 mt-2">
-                                <div class="profile-avatar ">
-                                    <img src="https://avatars.dicebear.com/api/open-peeps/:{{ $property->user->fullName() }}.svg"
-                                        alt="">
-                                </div>
-                                <div class="user-details">
-                                    <h2 class="light text-dark my-2 username text-center">
-                                        {{ $property->user->fullName() }}
-                                    </h2>
-                                    <p class="medium text-theme-blue text-center contact mb-0">
-                                        {{ $property->user->phone_number }}</p>
-                                </div>
+                <div class="col-3">
+                    <div class="card uploader-information p-2">
+                        <span class="text-muted show-card-id light ms-3 mt-2">Uploader ID: <span
+                                class="medium">{{ $property->user->id }}</span></span>
+                        <div class="user-info mx-3 mb-3 mt-2">
+                            <div class="profile-avatar ">
+                                <img src="https://avatars.dicebear.com/api/open-peeps/:{{ $property->user->fullName() }}.svg"
+                                    alt="">
+                            </div>
+                            <div class="user-details">
+                                <h2 class="light text-dark my-2 username text-center">
+                                    {{ $property->user->fullName() }}
+                                </h2>
+                                <p class="medium text-theme-blue text-center contact mb-0">
+                                    @if (auth()->check())
+                                        {{ $property->user->phone_number }}
+                                    @else
+                                        {{ 'XXX-XXX-XXXX' }}
+                                    @endif
+                                </p>
+                            </div>
+                            <div class="d-flex mt-2 px-0">
+                                <a href="." class="btn btn-custom-success w-100">Request A Visit</a>
                             </div>
                         </div>
                     </div>
-                @else
-                    <div class="col-4">
-                        <div class="card uploader-information p-2">
-                            <span class="text-muted show-card-id light ms-3 mt-2">Uploader ID: <span
-                                    class="medium">{{ $property->user->id }}</span></span>
-                            <div class="user-info ms-3 mb-2 mt-2">
-                                <div class="profile-avatar ">
-                                    <img src="https://avatars.dicebear.com/api/open-peeps/:{{ $property->user->fullName() }}.svg"
-                                        alt="">
-                                </div>
-                                <div class="user-details">
-                                    <h2 class="light text-dark my-2 username text-center">
-                                        {{ $property->user->fullName() }}
-                                    </h2>
-                                    <p class="medium text-theme-blue text-center contact mb-0">
-                                        XXX-XXX-XXXX</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endif
+                </div>
             </div>
             <div class="row">
                 <div class="col-12 col-md-12 col-lg-6">
@@ -109,7 +115,8 @@
                                     <div class="card mb-3">
                                         <div class="comment-details d-flex justify-content-between p-2">
                                             <span class="commentor">{{ $comment->poster->fullName() }}</span>
-                                            <span class="comment-date text-muted medium">{{ Carbon\Carbon::parse($comment->created_at)->format('F d') }}</span>
+                                            <span
+                                                class="comment-date text-muted medium">{{ Carbon\Carbon::parse($comment->created_at)->format('F d') }}</span>
                                         </div>
                                         <div class="card-body">
                                             <p>
