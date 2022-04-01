@@ -52,7 +52,8 @@ class PropertyController extends Controller
                 'property_category' => $request->property_category,
                 'description' => $request->description,
                 'price' => $request->price,
-                'property_size' => $request->property_size
+                'property_size' => $request->property_size,
+                'unit' => $request->unit,
             ]);
 
             $thumbnail_name = $property->id . Carbon::now()->format('YMDHis') . '.' . $request->file('thumbnail')->extension();

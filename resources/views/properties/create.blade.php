@@ -17,8 +17,9 @@
                                 <label for="listingType" class="semi-bold mb-1">I want to</label><br />
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="listing_type"
-                                        id="listingTypeRadioButton1" value="{{ App\Models\Property::LISTING_TYPES['SALE'] }}
-                                                                                            ">
+                                        id="listingTypeRadioButton1"
+                                        value="{{ App\Models\Property::LISTING_TYPES['SALE'] }}
+                                                                                                                                    ">
                                     <label class="form-check-label">Sell</label>
                                 </div>
                                 <div class="form-check form-check-inline">
@@ -36,8 +37,9 @@
                             <div class="form-group mb-3">
                                 <label for="propertyCategory" class="semi-bold mb-1">Property Category</label><br />
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="property_category" value="{{ App\Models\Property::PROPERTY_CATEGORY['LAND'] }}
-                                                                                            ">
+                                    <input class="form-check-input" type="radio" name="property_category"
+                                        value="{{ App\Models\Property::PROPERTY_CATEGORY['LAND'] }}
+                                                                                                                                    ">
                                     <label class="form-check-label">Land</label>
                                 </div>
                                 <div class="form-check form-check-inline">
@@ -46,8 +48,9 @@
                                     <label class="form-check-label" for="inlineRadio2">House</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="property_category" value="{{ App\Models\Property::PROPERTY_CATEGORY['APARTMENT'] }}
-                                                                                            ">
+                                    <input class="form-check-input" type="radio" name="property_category"
+                                        value="{{ App\Models\Property::PROPERTY_CATEGORY['APARTMENT'] }}
+                                                                                                                                    ">
                                     <label class="form-check-label" for="inlineRadio1">Apartment</label>
                                 </div>
                                 <div class="form-check form-check-inline">
@@ -85,145 +88,170 @@
                             {{-- Input for property address --}}
                             <div class="form-group mb-3">
                                 <label for="address" class="regular mb-1">Address</label>
-                                <input type="text" name="address" id="address" class="form-control" required>
-                            @if ($errors->has('address'))
-                                <div class="text-danger medium">
-                                    {{ $errors->first('address') }}
-                                </div>
-                            @endif
-                        </div>
-
-                        {{-- Latitude and Longitude --}}
-                        <div class="form-group mb-3 d-none">
-                            <label for="" class="regular mb-1">Latitude and Longitude</label>
-
-                            <div class="input-group">
-                                <input type="text" aria-label="Latitude" name="latitude" id="latitude"
-                                    class="form-control" placeholder="Latitude">
-                                <input type="text" name="longitude" aria-label="Longitude" id="longitude"
-                                    class="form-control" placeholder="Longitude">
+                                <input type="text" name="address" id="address" class="form-control">
+                                @if ($errors->has('address'))
+                                    <div class="text-danger medium">
+                                        {{ $errors->first('address') }}
+                                    </div>
+                                @endif
                             </div>
-                            @if ($errors->has('latitude'))
-                                <div class="text-danger medium">
-                                    {{ $errors->first('latitude') }}
+
+                            {{-- Latitude and Longitude --}}
+                            <div class="form-group mb-3 d-none">
+                                <label for="" class="regular mb-1">Latitude and Longitude</label>
+
+                                <div class="input-group">
+                                    <input type="text" aria-label="Latitude" name="latitude" id="latitude"
+                                        class="form-control" placeholder="Latitude">
+                                    <input type="text" name="longitude" aria-label="Longitude" id="longitude"
+                                        class="form-control" placeholder="Longitude">
                                 </div>
-                            @endif
-                            @if ($errors->has('longitude'))
-                                <div class="text-danger medium">
-                                    {{ $errors->first('longitude') }}
-                                </div>
-                            @endif
-                        </div>
-                        {{-- Property Name --}}
-                        <div class="form-group mb-3">
-                            <label for="property_name" class="regular mb-1">Property Name</label>
-                            <input type="text" name="property_name" id="property_name" class="form-control">
-                            @if ($errors->has('property_name'))
-                                <div class="text-danger medium">
-                                    {{ $errors->first('property_name') }}
-                                </div>
-                            @endif
-                        </div>
-                        {{-- Property Size --}}
-                        <div class="form-group mb-3">
-                            <label for="property_size" class="regular mb-1">Property Size</label>
-                            <input type="text" name="property_size" id="property_size" class="form-control">
-                            @if ($errors->has('property_size'))
-                                <div class="text-danger medium">
-                                    {{ $errors->first('property_size') }}
-                                </div>
-                            @endif
-                        </div>
-                        {{-- Property Price --}}
-                        <div class="form-group mb-3">
-                            <label for="piceAddon" class="regular mb-1">Property Price</label>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="priceAddon">Rs.</span>
-                                </div>
-                                <input type="number" class="form-control" name="price" aria-label="propertyPrice"
-                                    aria-describedby="priceAddon">
+
+
                             </div>
-                        </div>
-                        {{-- Property Description --}}
-                        <div class="form-group mb-3">
-                            <label for="description" class="regular mb-1">Description</label>
-                            <textarea name="description" id="description" class="form-control" placeholder="Description of the property"
-                                rows="5"></textarea>
-                            @if ($errors->has('description'))
-                                <div class="text-danger medium">
-                                    {{ $errors->first('description') }}
+                            {{-- Property Name --}}
+                            <div class="form-group mb-3">
+                                <label for="property_name" class="regular mb-1">Property Name</label>
+                                <input type="text" name="property_name" id="property_name" class="form-control">
+                                @if ($errors->has('property_name'))
+                                    <div class="text-danger medium">
+                                        {{ $errors->first('property_name') }}
+                                    </div>
+                                @endif
+                            </div>
+                            {{-- Property Size --}}
+                            <div class="form-group mb-3">
+                                <label for="property_size" class="regular mb-1">Property Size</label>
+                                <div class="row p-0 g-0">
+                                    <div class="col-6 pe-2">
+                                        <input type="text" name="property_size" id="property_size" class="form-control"
+                                            placeholder="1-2-3 (Absolute for standard units)">
+                                    </div>
+                                    <div class="col-6">
+                                        <select class="form-select" id="unit" name="unit"
+                                            aria-label="Default select example">
+                                            <option selected disabled>Select a Unit</option>
+                                            @foreach (App\Models\Property::UNITS as $key => $value)
+                                                <option value="{{ $key }}">{{ $value }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
-                            @endif
-                        </div>
-                        {{-- Property Images --}}
-                        <div id="imagesPreview" class="images-preview">
-                            <img src="" alt="" id="thumbnail" class="thumbnail">
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="thumbnail" class="regular mb-1">Upload a thumbnail for the property</label>
-                            <input type="file" name="thumbnail" id="thumbnail" class="form-control">
-                            @if ($errors->has('thumbnail'))
-                                <div class="text-danger medium">
-                                    {{ $errors->first('thumbnail') }}
+
+                                <div class="row p-0 g-0">
+                                    <div class="col-6 pe-2">
+                                        @if ($errors->has('property_size'))
+                                            <div class="text-danger medium">
+                                                {{ $errors->first('property_size') }}
+                                            </div>
+                                        @endif
+                                    </div>
+                                    <div class="col-6 p-0">
+                                        @if ($errors->has('unit'))
+                                            <div class="text-danger medium">
+                                                {{ $errors->first('unit') }}
+                                            </div>
+                                        @endif
+                                    </div>
                                 </div>
-                            @endif
+                            </div>
+                            {{-- Property Price --}}
+                            <div class="form-group mb-3">
+                                <label for="piceAddon" class="regular mb-1">Property Price</label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="priceAddon">Rs.</span>
+                                    </div>
+                                    <input type="number" class="form-control" name="price" aria-label="propertyPrice"
+                                        aria-describedby="priceAddon">
+                                </div>
+                                @if ($errors->has('price'))
+                                    <div class="text-danger medium">
+                                        {{ $errors->first('price') }}
+                                    </div>
+                                @endif
+
+                            </div>
+                            {{-- Property Description --}}
+                            <div class="form-group mb-3">
+                                <label for="description" class="regular mb-1">Description</label>
+                                <textarea name="description" id="description" class="form-control" placeholder="Description of the property"
+                                    rows="5"></textarea>
+                                @if ($errors->has('description'))
+                                    <div class="text-danger medium">
+                                        {{ $errors->first('description') }}
+                                    </div>
+                                @endif
+                            </div>
+                            {{-- Property Images --}}
+                            <div id="imagesPreview" class="images-preview">
+                                <img src="" alt="" id="thumbnail" class="thumbnail">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="thumbnail" class="regular mb-1">Upload a thumbnail for the property</label>
+                                <input type="file" name="thumbnail" id="thumbnail" class="form-control">
+                                @if ($errors->has('thumbnail'))
+                                    <div class="text-danger medium">
+                                        {{ $errors->first('thumbnail') }}
+                                    </div>
+                                @endif
+                            </div>
+                            <div class="form-group mb-0">
+                                <button type="submit" class="btn btn-custom-success semi-bold w-100 mb-2">
+                                    Create
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-6 p-3 ">
+                        <div class="form-group map-container">
+                            <div class="map" id="map"></div>
                         </div>
-                        <div class="form-group mb-0">
-                            <button type="submit" class="btn btn-custom-success semi-bold w-100 mb-2">
-                                Create
-                            </button>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-12 col-md-12 col-lg-6 p-3 ">
-                    <div class="form-group map-container">
-                        <div class="map" id="map"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
 
 @section('scripts')
-<script>
-    // Script for leaflet.js
-    // Setting the center of the map according to the selected locality
-    var map = L.map('map').setView({
-        lon: {{ $localities->first()->longitude }},
-        lat: {{ $localities->first()->latitude }}
-    }, 16);
-    var marker = null;
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>',
-        maxZoom: 50,
-    }).addTo(map);
+    <script>
+        // Script for leaflet.js
+        // Setting the center of the map according to the selected locality
+        var map = L.map('map').setView({
+            lon: {{ $localities->first()->longitude }},
+            lat: {{ $localities->first()->latitude }}
+        }, 16);
+        var marker = null;
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>',
+            maxZoom: 50,
+        }).addTo(map);
 
-    map.on('click', function(e) {
+        map.on('click', function(e) {
 
-        if (marker != null) map.removeLayer(marker);
+            if (marker != null) map.removeLayer(marker);
 
-        document.getElementById('latitude').value = e.latlng.lat;
-        document.getElementById('longitude').value = e.latlng.lng;
+            document.getElementById('latitude').value = e.latlng.lat;
+            document.getElementById('longitude').value = e.latlng.lng;
 
-        marker = L.marker({
-            lon: e.latlng.lng,
-            lat: e.latlng.lat
-        }).bindPopup('Home').addTo(map);
+            marker = L.marker({
+                lon: e.latlng.lng,
+                lat: e.latlng.lat
+            }).bindPopup('Home').addTo(map);
 
-    });
+        });
 
-    // Getting the select element
-    var localitySelect = document.getElementById('locality_id');
+        // Getting the select element
+        var localitySelect = document.getElementById('locality_id');
 
-    localitySelect.addEventListener('change', (e) => {
-        let element = e.target || e.srcElement;
-        let selectedOption = element.options[element.selectedIndex];
-        let latitude = selectedOption.getAttribute('data-latitude');
-        let longitude = selectedOption.getAttribute('data-longitude');
-        map.panTo(new L.LatLng(latitude, longitude));
-    });
-</script>
+        localitySelect.addEventListener('change', (e) => {
+            let element = e.target || e.srcElement;
+            let selectedOption = element.options[element.selectedIndex];
+            let latitude = selectedOption.getAttribute('data-latitude');
+            let longitude = selectedOption.getAttribute('data-longitude');
+            map.panTo(new L.LatLng(latitude, longitude));
+        });
+    </script>
 @endsection

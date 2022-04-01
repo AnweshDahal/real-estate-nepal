@@ -34,7 +34,8 @@ class StorePropertyRequest extends FormRequest
             'description' => ['nullable', 'string'],
             'price' => ['required', 'string'],
             'thumbnail' => ['required', 'mimes:jpg,jpeg,bmp,png'],
-            'property_size' => ['required', 'string']
+            'property_size' => ['required', 'string'],
+            'unit' => ['required', 'string']
         ];
     }
 }
