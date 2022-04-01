@@ -30,6 +30,7 @@ class Property extends Model
         'property_category',
         'price',
         'property_size',
+        'unit',
     ];
 
     // Date Attributes
@@ -51,6 +52,14 @@ class Property extends Model
         'HOUSE' => 'HOUSE',
         'APARTMENT' => 'APARTMENT',
         'ROOM' => 'ROOM',
+    ];
+
+    // Property Units
+    const UNITS = [
+        'BIGHA-KATHA-DHUR' => 'Bigha-Katha-Dhur',
+        'ROPANI-ANA-PAISA' => 'Ropani-Ana-Paisa',
+        'SQFT' => 'Sq. Ft.',
+        'SQMTR' => 'Sq. Meter',
     ];
 
     public function image()
