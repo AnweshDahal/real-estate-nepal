@@ -82,3 +82,11 @@
 .condensed-4{
     letter-spacing: -0.04em;
 }
+
+.success-toast {
+    background-color: $green;
+}
+
+.error-toast {
+    background-color: #ff0033;
+}

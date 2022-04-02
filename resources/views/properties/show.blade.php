@@ -67,9 +67,23 @@
                                     @endif
                                 </p>
                             </div>
-                            <div class="d-flex mt-2 px-0">
-                                <a href="." class="btn btn-custom-success w-100">Request A Visit</a>
-                            </div>
+                            @if (auth()->check())
+                                <div class="d-flex mt-2 px-0">
+                                    <form action="{{ route('visit_request.store') }}" method="post"
+                                        class="w-100">
+                                        @csrf
+                                        <input type="hidden" name="property_id" value="{{ $property->id }}">
+                                        <input type="hidden" name="requestee" value="{{ $property->user_id }}">
+                                        <div class="form-group mb-2">
+                                            <input type="date" name="visit_date" id="visit_date" class="form-control"
+                                                required>
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn btn-custom-success w-100">Request A Visit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>

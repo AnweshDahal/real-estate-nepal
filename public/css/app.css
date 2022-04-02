@@ -79,6 +79,14 @@
   letter-spacing: -0.04em;
 }
 
+.success-toast {
+  background-color: #0cce6b;
+}
+
+.error-toast {
+  background-color: #ff0033;
+}
+
 header {
   padding: 0.5rem;
   font-family: Inter, sans-serif;
@@ -491,6 +499,95 @@ textarea {
   height: 100%;
   cursor: pointer;
   border-radius: 0.4em;
+}
+
+.toast-custom {
+  font-family: Inter, sans-serif;
+  visibility: hidden;
+  min-width: 150px;
+  margin-left: 10px;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 1em;
+  position: fixed;
+  z-index: 999999;
+  right: 50px;
+  bottom: 30px;
+}
+
+.show {
+  visibility: visible !important;
+  -webkit-animation: fadein 0.75s, fadeout 0.75s 2.5s;
+  animation: fadein 0.75s, fadeout 0.75s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  from {
+    bottom: 0px;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+.visit-request-list-item {
+  padding: 1em;
+  background-color: #eeeeee;
+  margin-right: 0.5em;
+  border-radius: 0.4em;
+}
+.visit-request-list-item .username {
+  font-size: 1.5rem;
+}
+.visit-request-list-item .request-status {
+  font-size: 2rem;
+  padding: 10px 15px;
+  margin-right: 10px;
+  border-radius: 0.2em;
+}
+.visit-request-list-item .accepted {
+  background-color: #b8ffbf;
+  color: #365731;
+}
+.visit-request-list-item .rejected {
+  background-color: #f59696;
+  color: #ca0000;
+}
+.visit-request-list-item .pending {
+  background-color: #8c8cff;
+  color: #1e1e8b;
 }
 
 /**

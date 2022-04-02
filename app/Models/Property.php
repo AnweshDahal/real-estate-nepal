@@ -9,6 +9,7 @@ use App\Models\Image;
 use App\Models\Locality;
 use App\Models\User;
 use App\Models\Comment;
+use App\Models\VisitRequest;
 
 class Property extends Model
 {
@@ -80,5 +81,10 @@ class Property extends Model
     public function comments()
     {
         return $this->hasMany(Comment::class);
+    }
+
+    public function visitRequest()
+    {
+        return $this->hasMany(VisitRequest::class);
     }
 }
