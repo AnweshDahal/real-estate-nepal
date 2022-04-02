@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="PRAGMA" content="NO-CACHE"> 
+    <meta http-equiv="PRAGMA" content="NO-CACHE">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -62,7 +62,8 @@
                 <a href="#" class="nav-link">Contact Us</a>
             </nav>
             <div class="brand-logo col-12 col-lg-4  d-flex align-items-center justify-content-center">
-                <a href="{{ route('home') }}" class="brand-name extra-bold">RealEstate <span class="text-theme-blue">Nepal</span></a>
+                <a href="{{ route('home') }}" class="brand-name extra-bold">RealEstate <span
+                        class="text-theme-blue">Nepal</span></a>
             </div>
             {{-- Displayed only if the route for login has been defined --}}
             @if (Route::has('login'))
@@ -71,6 +72,8 @@
                     @auth
 
                         <a href="{{ route('property.create') }}" class="nav-link mr-2">Add Listing</a>
+                        <a href="{{ route('visit_request.index') }}" class="nav-link mr-2">Visit Requests</a>
+                        <a href="#" class="nav-link mr-2">{{ auth()->user()->fullname() }}</a>
                         <a href="{{ route('logout') }}" id="logout" class="nav-link"
                             onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">Sign Out</a>
                     @else
@@ -143,6 +146,7 @@
             @csrf
         </form>
     </div>
+    <div id="toast" class="toast-custom">Already Done</div>
 
     <!-- Bootstrap Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -150,6 +154,35 @@
     </script>
 
     @yield('scripts')
+    @if (session('error'))
+        <script>
+            let toast = document.getElementById("toast"); // selects  the toast
+            toast.innerHTML = "{{ session('error') }}"; // sets the text of the toast
+            toast.classList.toggle("show"); // shows the toast
+            toast.classList.toggle("error-toast")
+
+            // Hides the toast after 3 seconds = 3000 ms
+            setTimeout(() => {
+                toast.classList.toggle("show");
+                toast.classList.toggle("error-toast")
+            }, 3000);
+        </script>
+    @endif
+
+    @if (session('success'))
+        <script>
+            let toast = document.getElementById("toast"); // selects  the toast
+            toast.innerHTML = "{{ session('success') }}"; // sets the text of the toast
+            toast.classList.toggle("show"); // shows the toast
+            toast.classList.toggle("success-toast")
+
+            // Hides the toast after 3 seconds = 3000 ms
+            setTimeout(() => {
+                toast.classList.toggle("show");
+                toast.classList.toggle("success-toast")
+            }, 3500);
+        </script>
+    @endif
 </body>
 
 </html>
