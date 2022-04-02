@@ -11,6 +11,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 // Related Models
 use App\Models\UserStatus;
+use App\Models\Property;
 
 class User extends Authenticatable
 {
@@ -75,5 +76,10 @@ class User extends Authenticatable
 
     public function fullName(){
         return $this->first_name . ' ' . $this->last_name;
+    }
+
+    public function properties()
+    {
+        return $this->hasMany(Property::class, 'user_id');
     }
 }
