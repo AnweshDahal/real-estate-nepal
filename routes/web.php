@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\VisitRequestController;
+use App\Models\VisitRequest;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +33,8 @@ Route::get('/property/{property}', [PropertyController::class, 'show'])->name('p
 
 // Comment Routes
 Route::post('/comment', [CommentController::class, 'store'])->name('comment.store');
+
+// Visit Request Routes
+Route::get('/visit-request', [VisitRequestController::class, 'index'])->name('visit_request.index');
+Route::post('/visit-request', [VisitRequestController::class, 'store'])->name('visit_request.store');
+Route::put('/visit-request/{visitRequest}', [VisitRequestController::class, 'update'])->name('visit_request.update');
