@@ -15,6 +15,6 @@ class GuestController extends Controller
             $query->where('is_thumbnail', true);
         }])->get();
         $localities = Locality::select('id', 'locality_name')->get();
-        return view('welcome', compact('properties'));
+        return view('welcome', compact('properties', 'localities'));
     }
 }
