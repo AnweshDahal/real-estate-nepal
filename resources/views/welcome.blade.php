@@ -5,15 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="search-section">
-        <h1 class="section-title semi bold text-light text-center mb-3">Find a Home that Suits you!</h1>
-        <form action="." method="post">
-            <div class="searchbar">
-                <input type="text" name="search" id="search" class="searchbar-text" placeholder="Select a City">
-                <button class="searchbar-btn text-theme-blue"><i class="bi bi-search"></i></button>
-            </div>
-        </form>
-    </div>
+    @include('partials.search', $localities)
     <div class="property-index-container">
         <div class="card w-100 border-0">
             <div class="card-body">
