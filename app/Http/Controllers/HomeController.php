@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Locality;
 use Illuminate\Http\Request;
 use App\Models\Property;
 
@@ -27,6 +28,7 @@ class HomeController extends Controller
         $properties = Property::latest()->take(4)->with(['image' => function($query) {
             $query->where('is_thumbnail', true);
         }])->get();
-        return view('home', compact('properties'));
+        $localities = Locality::select('id', 'locality_name')->get();
+        return view('home', compact('properties', 'localities'));
     }
 }

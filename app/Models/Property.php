@@ -68,6 +68,11 @@ class Property extends Model
         return $this->hasMany(Image::class);
     }
 
+    public function thumbnail()
+    {
+        return Image::where('property_id', '=', $this->id)->where('is_thumbnail', '=', 1)->get();
+    }
+
     public function locality()
     {
         return $this->belongsTo(Locality::class, 'locality_id');

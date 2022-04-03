@@ -20,12 +20,12 @@
     }
 
     .rejected{
-        background-color: #f59696;
-        color: #ca0000;
+        background-color: $red-light;
+        color: $red;
     }
 
     .pending{
-        background-color: #8c8cff;
-        color: #1e1e8b;
+        background-color: $blue-light;
+        color: $blue-heavy;
     }
 }

@@ -30,6 +30,7 @@ Route::get('/property', [PropertyController::class, 'index'])->name('property.in
 Route::get('/property/create', [PropertyController::class, 'create'])->name('property.create');
 Route::post('/property', [PropertyController::class, 'store'])->name('property.store');
 Route::get('/property/{property}', [PropertyController::class, 'show'])->name('property.show');
+Route::post('/property/search', [PropertyController::class, 'search'])->name('property.search');
 
 // Comment Routes
 Route::post('/comment', [CommentController::class, 'store'])->name('comment.store');
