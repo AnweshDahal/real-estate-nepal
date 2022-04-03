@@ -18,16 +18,15 @@ class PropertyController extends Controller
     public function index()
     {
         $properties = Property::all();
-        if (request()->input('type') == 'buy'){
+        if (request()->input('type') == 'buy') {
             $properties = $properties->where('listing_type', Property::LISTING_TYPES['SALE']);
-        } else if (request()->input('type') == 'rent'){
+        } else if (request()->input('type') == 'rent') {
             $properties = $properties->where('listing_type', Property::LISTING_TYPES['RENT']);
         } else {
             return redirect()->route('home');
         }
 
         return view('properties.index', compact('properties'));
-
     }
 
     public function create()
@@ -71,9 +70,18 @@ class PropertyController extends Controller
             ->with('success', 'The property has been listed successfully!');
     }
 
-    public function show(Property $property){
+    public function show(Property $property)
+    {
         $thumbnail = Image::where('property_id', $property->id)->where('is_thumbnail', 1)->get();
 
         return view('properties.show', compact('property', 'thumbnail'));
+    }
+
+    public function search(Request $request)
+    {
+        $properties = Property::where('locality_id', $request->id)->get();
+        $locality = Locality::findOrFail($request->id);
+        
+        return view('properties.search', compact('properties', 'locality'));
     }
 }
