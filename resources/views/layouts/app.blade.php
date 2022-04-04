@@ -28,6 +28,7 @@
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Leaflet.js -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -71,8 +72,9 @@
                     {{-- Displayed if a user has been authenticated --}}
                     @auth
                         <a href="{{ route('property.create') }}" class="nav-link mr-2">Add Listing</a>
-                        <a href="{{ route('visit_request.index') }}" class="nav-link mr-2">Visit Requests</a>
-                        <a href="{{ route('like.index') }}" class="nav-link mr-2">Bookmarks</a>
+                        <a href="#" class="nav-link mr-2">{{ auth()->user()->first_name }}</a>
+                        {{-- <a href="{{ route('visit_request.index') }}" class="nav-link mr-2">Visit Requests</a> --}}
+                        {{-- <a href="{{ route('like.index') }}" class="nav-link mr-2">Bookmarks</a> --}}
                         <a href="{{ route('logout') }}" id="logout" class="nav-link"
                             onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">Sign Out</a>
                     @else

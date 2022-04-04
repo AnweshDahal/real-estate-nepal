@@ -1,11 +1,17 @@
 <div class="visit-request-list-item d-flex flex-row m-0 mb-2">
     <div class="request-status {{ strtolower($sentVisitRequest->status) }}">
         @if ($sentVisitRequest->status == App\Models\VisitRequest::STATUS['ACCEPTED'])
-            <i class="bi bi-hand-thumbs-up"></i>
+            <span class="material-icons">
+                thumb_up
+            </span>
         @elseif ($sentVisitRequest->status == App\Models\VisitRequest::STATUS['REJECTED'])
-            <i class="bi bi-hand-thumbs-down"></i>
+            <span class="material-icons">
+                thumb_down_alt
+            </span>
         @else
-            <i class="bi bi-clock"></i>
+            <span class="material-icons">
+                schedule
+            </span>
         @endif
     </div>
     <div class="mb-1 d-flex flex-column">

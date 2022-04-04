@@ -9,7 +9,9 @@
                     <option value="{{ $locality->id }}">{{ $locality->locality_name }}</option>
                 @endforeach
             </select>
-            <button class="searchbar-btn text-theme-blue"><i class="bi bi-search"></i></button>
+            <button class="searchbar-btn text-theme-blue"><span class="material-icons">
+                    search
+                </span></button>
         </div>
     </form>
 </div>
