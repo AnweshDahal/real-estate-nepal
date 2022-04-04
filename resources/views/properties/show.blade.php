@@ -10,11 +10,20 @@
             <div class="row mb-4">
                 <div class="col-9">
                     <div class="card show-card p-2">
-                        <span class="text-muted show-card-id light ms-3 mt-2">Property ID: <span
-                                class="medium">{{ $property->id }}</span></span>
-                        <h1 class="thin text-center">{{ $property->property_name }}</h1>
-                        <p class="semi-bold text-center
-                    ">{{ $property->address }}</p>
+                        <h1 class="semi-bold ms-3 mt-2">{{ $property->property_name }} <span
+                                class="text-muted light">#{{ $property->id }}</span></h1>
+                        <p class="semi-bold text-muted ms-3">{{ $property->address }}</p>
+                        @auth
+                            <form action="{{ route('like') }}" method="post"
+                                class="d-flex align-items-center justify-content-center mb-3">
+                                @csrf
+                                <input type="hidden" name="property_id" value="{{ $property->id }}">
+                                <button type="submit"
+                                    class="btn {{ auth()->user()->hasLiked($property)? 'btn-primary': 'btn-outline-primary' }}"><i
+                                        class="bi bi-bookmark-fill"></i> Bookmark</button>
+                            </form>
+
+                        @endauth
                         <div class="row">
                             <div class="col-12 col-md-12 col-lg-6 pe-0">
                                 @if ($property->description)
@@ -111,10 +120,7 @@
                                     @csrf
                                     <input type="hidden" name="property_id" id="property_id" value="{{ $property->id }}">
                                     <div class="form-group mb-3">
-                                        <textarea name="comment" id="comment" class="comment" cols="30" rows="10"></textarea>
-                                    </div>
-                                    <div class="form-group w-100 button-wrapper">
-                                        <input type="submit" value="Post" class="btn btn-custom-success">
+                                        <input type="text" name="comment" id="comment" class="form-control">
                                     </div>
                                 </form>
                             </div>
@@ -124,7 +130,7 @@
                 <div class="col-12 col-md-12 col-lg-6">
                     <div class="w-100">
                         <div class="comments d-flex flex-column-reverse">
-                            @if ($property->comments)
+                            @if (!$property->comments->isEmpty())
                                 @foreach ($property->comments as $comment)
                                     <div class="card mb-3">
                                         <div class="comment-details d-flex justify-content-between p-2">

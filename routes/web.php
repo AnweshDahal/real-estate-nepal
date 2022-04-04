@@ -5,6 +5,7 @@ use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\VisitRequestController;
+use App\Http\Controllers\LikeController;
 use App\Models\VisitRequest;
 
 /*
@@ -39,3 +40,7 @@ Route::post('/comment', [CommentController::class, 'store'])->name('comment.stor
 Route::get('/visit-request', [VisitRequestController::class, 'index'])->name('visit_request.index');
 Route::post('/visit-request', [VisitRequestController::class, 'store'])->name('visit_request.store');
 Route::put('/visit-request/{visitRequest}', [VisitRequestController::class, 'update'])->name('visit_request.update');
+
+// Like Routes
+Route::post('/like', [LikeController::class, 'store'])->name('like');
+Route::get('/like', [LikeController::class, 'index'])->name('like.index');

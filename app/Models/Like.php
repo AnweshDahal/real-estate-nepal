@@ -25,4 +25,9 @@ class Like extends Model
         'updated_at',
         'deleted_at',
     ];
+
+    public function property()
+    {
+        return $this->belongsTo(Property::class, 'property_id');
+    }
 }

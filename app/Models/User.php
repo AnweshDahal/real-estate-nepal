@@ -12,6 +12,7 @@ use Laravel\Sanctum\HasApiTokens;
 // Related Models
 use App\Models\UserStatus;
 use App\Models\Property;
+use App\Models\Like;
 
 class User extends Authenticatable
 {
@@ -81,5 +82,10 @@ class User extends Authenticatable
     public function properties()
     {
         return $this->hasMany(Property::class, 'user_id');
+    }
+
+    public function hasLiked(Property $property)
+    {
+        return Like::where('property_id', '=', $property->id)->where('user_id', '=', auth()->user()->id)->exists();
     }
 }
