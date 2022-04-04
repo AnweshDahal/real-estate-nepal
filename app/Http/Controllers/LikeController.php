@@ -13,7 +13,8 @@ class LikeController extends Controller
     {
         $likes = Like::where('user_id', '=', auth()->user()->id)->get();
 
-        // return 
+
+        return view('likes.index', compact('likes'));
     }
     public function store(Request $request)
     {
@@ -21,7 +22,7 @@ class LikeController extends Controller
         if (Property::findOrFail($request->property_id)->user->id == auth()->user()->id){
             return redirect()->back()->with('error', 'You cannot bookmark your own property');
         }
-        
+
         if (auth()->user()->hasLiked(Property::findOrFail($request->property_id))) {
             Like::where('user_id', '=', auth()->user()->id)->delete();
 
