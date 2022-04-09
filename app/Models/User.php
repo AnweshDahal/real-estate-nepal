@@ -13,6 +13,8 @@ use Laravel\Sanctum\HasApiTokens;
 use App\Models\UserStatus;
 use App\Models\Property;
 use App\Models\Like;
+use App\Models\VisitRequest;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
@@ -87,5 +89,20 @@ class User extends Authenticatable
     public function hasLiked(Property $property)
     {
         return Like::where('property_id', '=', $property->id)->where('user_id', '=', auth()->user()->id)->exists();
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class, 'user_id');
+    }
+
+    public function sentVisitRequest()
+    {
+        return $this->hasMany(VisitRequest::class, 'requestor');
+    }
+
+    public function recievedVisitRequest()
+    {
+        return $this->hasMany(VisitRequest::class, 'requestee');
     }
 }

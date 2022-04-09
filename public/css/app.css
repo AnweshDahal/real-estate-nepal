@@ -252,7 +252,7 @@ textarea {
   background-position: 0% 50%;
   padding: 10px;
   font-family: Inter, sans-serif;
-  background-image: url("/img/backgrounds/search-bg.jpg");
+  background-image: url("/img/backgrounds/search-bg.png");
   min-height: 50vh;
   display: flex;
   flex-direction: column;
@@ -571,6 +571,7 @@ textarea {
   background-color: #eeeeee;
   margin-right: 0.5em;
   border-radius: 0.4em;
+  font-family: Inter, sans-serif;
 }
 .visit-request-list-item .username {
   font-size: 1.5rem;
@@ -637,6 +638,135 @@ textarea {
 .search-result-list-item .row .info-col .property-title a {
   text-decoration: none;
   color: #292929;
+}
+
+.user-settings__content {
+  display: block;
+  background-color: #eeeeee;
+  margin: 0;
+  padding: 30px 0px;
+}
+.user-settings__content .user-settings__container {
+  width: 90%;
+  margin: auto;
+}
+.user-settings__content .user-settings__container .user-settings__card {
+  border: none;
+  border-radius: 0.4em;
+  overflow: hidden;
+}
+.user-settings__content .user-settings__container .user-info-card {
+  padding: 30px;
+}
+.user-settings__content .user-settings__container .user-info-card .user-image-wrapper .user-image {
+  width: 100%;
+  border-radius: 60%;
+}
+.user-settings__content .user-settings__container .user-info-card .user-name-wrapper {
+  font-family: Inter, sans-serif;
+}
+.user-settings__content .user-settings__container .user-info-card .user-name-wrapper .user-setting__name {
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+.user-settings__content .user-settings__container .user-info-card .user-name-wrapper .user-setting__details {
+  font-size: 1rem;
+  line-height: 1rem;
+}
+.user-settings__content .user-settings__container .user-info-card .user-name-wrapper .material-icons {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+.user-settings__content .user-settings__container .nav-card {
+  padding: 30px;
+}
+.user-settings__content .user-settings__container .nav-card .nav-tab {
+  font-family: Inter, sans-serif;
+  font-size: 1;
+  text-decoration: none;
+  color: #424242;
+  padding: 5px;
+  padding-left: 10px;
+  border: none;
+  background: none;
+  border-radius: 0.4em;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-weight: 500;
+  transition: background-color ease-in-out 200ms 10ms;
+}
+.user-settings__content .user-settings__container .nav-card .nav-tab:hover {
+  background-color: #eeeeee;
+}
+.user-settings__content .user-settings__container .nav-card .nav-tab .material-icons {
+  margin-right: 5px;
+}
+.user-settings__content .user-settings__container .nav-card .active {
+  color: #0047b0;
+  background-color: #eeeeee;
+  font-weight: 600;
+}
+
+.user-settings__info-card {
+  min-height: 300px;
+}
+.user-settings__info-card .card {
+  padding: 20px;
+  min-height: 100%;
+}
+
+.user-settings__card .card-title {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 600;
+  padding: 0;
+  padding-left: 10px;
+  border-left: 7px solid #0cce6b;
+}
+
+.property-list-item {
+  padding: 10px;
+  border: 1px solid #eeeeee;
+  border-radius: 0.4em;
+  display: flex;
+  align-items: center;
+}
+.property-list-item .thumbnail {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 1/1;
+  border-radius: 0.4em;
+}
+.property-list-item .property-info {
+  margin-left: 20px;
+}
+.property-list-item .property-info .property-name {
+  font-family: Inter, sans-serif;
+  color: #424242;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+.property-list-item .property-info .price {
+  font-size: 1.5rem;
+}
+
+.not-found {
+  font-family: Inter, sans-serif;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+  align-items: center;
+  justify-content: center;
+}
+.not-found span {
+  font-size: 2rem;
+  color: #424242;
+  font-weight: 400;
 }
 
 /**
