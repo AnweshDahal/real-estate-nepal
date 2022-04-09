@@ -7,6 +7,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\VisitRequestController;
 use App\Http\Controllers\LikeController;
 use App\Models\VisitRequest;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +45,26 @@ Route::put('/visit-request/{visitRequest}', [VisitRequestController::class, 'upd
 // Like Routes
 Route::post('/like', [LikeController::class, 'store'])->name('like');
 Route::get('/like', [LikeController::class, 'index'])->name('like.index');
+
+// User Routes
+Route::get('/user/{user}', [UserController::class, 'show'])->name('user.show');
+
+// Routes for admin dashboard
+// Routes for admin dashboard
+// Admin: Get/ Delete all/ select Users
+// Route::get('/users', [AdminUserController::class, 'index'])->name('admin.user.index');
+// Route::delete('/users/{id}', [AdminUserController::class, 'delete'])->name('admin.user.delete');
+// Admin: Get/ Delete all/ select Properties
+// Route::get('/properties', [AdminProperties::class, 'index'])->name('admin.properties.index');
+// Route::detete('/properties/{id}', [AdminProperties::class, 'delete'])->name('admin.user.delete');
+// Admin: Get/ Delete all/ select Comments
+// Route::get('/properties', [AdminProperties::class, 'index'])->name('admin.properties.index');
+// Route::detete('/properties/{id}', [AdminProperties::class, 'delete'])->name('admin.user.delete');
+// Admin: Get/ Delete all/ select Images
+// Route::get('/properties', [AdminProperties::class, 'index'])->name('admin.properties.index');
+// Route::detete('/properties/{id}', [AdminProperties::class, 'delete'])->name('admin.user.delete');
+// Admin: CRUD Localities
+// Route::get('/properties', [AdminProperties::class, 'index'])->name('admin.properties.index');
+// Route::detete('/properties/{id}', [AdminProperties::class, 'delete'])->name('admin.user.delete');
+// Route::get('/properties', [AdminProperties::class, 'index'])->name('admin.properties.index');
+// Route::detete('/properties/{id}', [AdminProperties::class, 'delete'])->name('admin.user.delete');
