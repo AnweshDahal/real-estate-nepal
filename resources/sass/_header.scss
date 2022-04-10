@@ -1,0 +1,33 @@
+header {
+    // Global style for header
+    padding: 0.5rem;
+    @include default-font;
+
+    .row {
+        margin: 0px;
+
+        nav,
+        .account-controls {
+            .nav-link {
+                padding: 0px 0.5rem;
+                color: $dark;
+                font-weight: 400;
+
+                // On Hover Effect
+                &:hover {
+                    color: $theme-blue;
+                }
+            }
+        }
+
+        .brand-logo {
+            .brand-name {
+                color: $black;
+                @include title-font;
+                font-size: 2rem;
+                letter-spacing: -0.04em;
+                text-decoration: none;
+            }
+        }
+    }
+}

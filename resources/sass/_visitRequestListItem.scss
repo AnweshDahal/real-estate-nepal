@@ -1,0 +1,32 @@
+.visit-request-list-item{
+    padding: 1em;
+    background-color: $gray;
+    margin-right: 0.5em;
+    border-radius: 0.4em;
+    @include default-font;
+    .username{
+        font-size: 1.5rem;
+    }
+
+    .request-status{
+        font-size: 2rem;
+        padding: 10px 15px;
+        margin-right: 10px;
+        border-radius: 0.2em;
+    }
+
+    .accepted{
+        background-color: $green-light;
+        color: $green-dark;
+    }
+
+    .rejected{
+        background-color: $red-light;
+        color: $red;
+    }
+
+    .pending{
+        background-color: $blue-light;
+        color: $blue-heavy;
+    }
+}

@@ -1,0 +1,92 @@
+// Common properties shared by teh login and register forms
+.login-container, .register-container {
+    background-size: cover;
+    background-position: 0% 50%;
+    padding: 10px;
+    @include default-font;
+
+    .container {
+        width: 90%;
+        margin: 100px auto;
+    }
+}
+
+.login-form-card, .register-form-card {
+    width: 100%;
+    border: none;
+    overflow: hidden;
+}
+
+.login-graphics, .register-graphics {
+    width: 300px;
+}
+
+.login-form-info, .register-form-info {
+    background: $blue-gradient-1;
+}
+
+.login-form, .register-form {
+    padding: 20px;
+    .form-title {
+        font-size: 1.4rem;
+    }
+
+    form {
+        width: 100%;
+        .form-group {
+            width: 100%;
+        }
+    }
+}
+
+// Login Form Specific Styling
+
+.login-form-info {
+    .login-message {
+        font-size: 1.75rem;
+        color: $light;
+    }
+}
+
+.login-form{
+    .form-title {
+        font-size: 1.1rem;
+    }
+}
+
+.login-container {
+    background-image: url("/img/backgrounds/login_bg.jpg");
+}
+
+// Register Form Specific Styling
+.register-container {
+    background-image: url("/img/backgrounds/register.jpg");
+}
+
+.register-form {
+    .form-title {
+        p{
+            font-size: 0.9rem;
+        }
+    }
+}
+
+.register-form-info {
+    .register-message {
+        color: $light;
+        font-size: 1rem;
+
+        h3 {
+            font-size: 2rem;
+        }
+
+        div{
+            width: 58%;
+            margin: 10px auto;
+
+            p {
+                text-align: justify;
+            }
+        }
+    }
+}

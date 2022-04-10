@@ -1,0 +1,40 @@
+// Variables
+@import 'variables';
+@import 'mixins';
+@import 'utility';
+@import 'header';
+@import 'registerAndLoginForm';
+@import 'footer';
+@import 'global';
+@import 'property';
+@import 'propertyCard';
+@import 'createPropertyCard';
+@import 'showPropertyCard';
+@import 'map';
+@import 'toast';
+@import 'visitRequestListItem';
+@import 'searchResult';
+@import 'userSetting';
+
+/**
+    Style Structure
+    [selector] {
+        [display]
+        [display properties: alignment etc..]
+        [position: top, right, left, right]
+        [size: width, height]
+        [background]
+        [text color]
+        [font]
+
+        &:[event]{
+            // same as above
+        }
+    }
+*/
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}

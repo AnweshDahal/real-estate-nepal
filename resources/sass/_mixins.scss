@@ -1,0 +1,9 @@
+// Default font mixin
+@mixin default-font {
+    font-family: Inter, sans-serif;
+}
+
+// Title font mixin
+@mixin title-font {
+    font-family: Manrope, sans-serif;
+}
