@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Property;
 
 class Image extends Model
 {
@@ -27,5 +28,9 @@ class Image extends Model
         'updated_at',
         'deleted_at',
     ];
+
+    public function property(){
+        return $this->belongsTo(Property::class, 'property_id');
+    }
     
 }
