@@ -1,5 +1,5 @@
 <div class="visit-request-list-item d-flex flex-row m-0 mb-2">
-    <div class="request-status {{ strtolower($sentVisitRequest->status) }}">
+    <div class="request-status {{ strtolower($sentVisitRequest->status) }}" title="{{ $sentVisitRequest->status }}">
         @if ($sentVisitRequest->status == App\Models\VisitRequest::STATUS['ACCEPTED'])
             <span class="material-icons">
                 thumb_up

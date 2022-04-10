@@ -72,9 +72,11 @@
                     {{-- Displayed if a user has been authenticated --}}
                     @auth
                         <a href="{{ route('property.create') }}" class="nav-link mr-2">Add Listing</a>
-                        <a href="#" class="nav-link mr-2">{{ auth()->user()->first_name }}</a>
-                        {{-- <a href="{{ route('visit_request.index') }}" class="nav-link mr-2">Visit Requests</a> --}}
-                        {{-- <a href="{{ route('like.index') }}" class="nav-link mr-2">Bookmarks</a> --}}
+                        <a href="{{ route('user.show', auth()->user()->id) }}"
+                            class="nav-link mr-2">{{ auth()->user()->first_name }}</a>
+                        @if (auth()->user()->status->role == 'admin')
+                            <a href="{{ route('admin.dashboard') }}" class="nav-link">Dashboard</a>
+                        @endif
                         <a href="{{ route('logout') }}" id="logout" class="nav-link"
                             onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">Sign Out</a>
                     @else
