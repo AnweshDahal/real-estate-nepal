@@ -70,7 +70,7 @@
                                 </h2>
                                 <p class="medium text-theme-blue text-center contact mb-0">
                                     @if (auth()->check())
-                                        {{ $property->user->phone_number }}
+                                        <a href="tel:{{ $property->user->phone_number }}" class="link">{{ $property->user->phone_number }}</a>
                                     @else
                                         {{ 'XXX-XXX-XXXX' }}
                                     @endif
