@@ -15,13 +15,63 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
+    {{-- Chart.js --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
         integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        
+
+    {{-- Leaflet.js --}}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
     <style>
         * {
             font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .map-container {
+            height: 500px;
+            width: 100%;
+        }
+
+        #map {
+            position: relative;
+            height: 500px;
+            cursor: pointer;
+            border-radius: 0.4em;
+        }
+
+        .localities-table {
+            max-height: 240px !important;
+            overflow-y: scroll;
+            position: relative;
+        }
+
+        .localities-table::-webkit-scrollbar {
+            width: 5px;
+            margin-right: -5px;
+        }
+
+        .localities-table::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .localities-table::-webkit-scrollbar-thumb {
+            background-color: #29292955;
+            max-height: 130px;
+            border-radius: 5px;
+        }
+
+        .t-head{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10000;
+
         }
 
     </style>

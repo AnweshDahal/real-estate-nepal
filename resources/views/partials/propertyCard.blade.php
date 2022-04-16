@@ -6,7 +6,7 @@
         <div class="img">
             <img src="{{ asset('storage/img/property/' . $property->image->first()->file_name) }}" alt="">
         </div>
-        <div class="type">For {{ $listing_type == 'SALE' ? 'Sale' : 'Rent' }}</div>
+        <div class="type">For {{ $listing_type }}</div>
         <div class="property-type">
             {{ $property_category }}
         </div>
