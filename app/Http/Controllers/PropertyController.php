@@ -33,7 +33,7 @@ class PropertyController extends Controller
     {
         abort_if(!auth()->check(), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $localities = Locality::all(); // fetching all properties from the dB
+        $localities = Locality::orderBy('locality_name')->get(); // fetching all properties from the dB
         return view('properties.create', compact('localities'));
     }
 
@@ -77,10 +77,10 @@ class PropertyController extends Controller
         return view('properties.show', compact('property', 'thumbnail'));
     }
 
-    public function search(Request $request)
+    public function search()
     {
-        $properties = Property::where('locality_id', $request->id)->get();
-        $locality = Locality::findOrFail($request->id);
+        $properties = Property::where('locality_id', request()->query('id'))->paginate(1)->withQueryString();
+        $locality = Locality::findOrFail(request()->input('id'));
         
         return view('properties.search', compact('properties', 'locality'));
     }

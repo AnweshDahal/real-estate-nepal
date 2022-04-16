@@ -24,36 +24,50 @@
                     </tr>
                 </thead>
                 <tbody>
+
                     @foreach ($users as $user)
                         <tr>
                             <td scope="row">{{ $user->id ?? '-' }}</td>
                             <td>{{ $user->first_name ?? '-' }}</td>
                             <td>{{ $user->middle_name ?? '-' }}</td>
                             <td>{{ $user->last_name ?? '-' }}</td>
-                            <td>{{ $user->email ?? '-' }}</td>
+                            <td>
+                                @if ($user->id == '1')
+                                    @if (auth()->user()->id == '1')
+                                        {{ $user->email ?? '-' }}
+                                    @else
+                                        {{ 'XXXXXXXXXXXXXXX' }}
+                                    @endif
+                                @else
+                                    {{ $user->email ?? '-' }}
+                                @endif
+                            </td>
                             <td>{{ $user->phone_number ?? '-' }}</td>
                             <td>
-                                <form action="{{ route('admin.user.destroy', $user->id) }}" method="post">
-                                    @csrf
-                                    @method('delete')
-                                    <button class="btn btn-danger btn-sm">Delete</button>
-                                </form>
-                            </td>
-                            <td>
-                                @if ($user->status->role != 'admin')
-                                    <form action="{{ route('admin.user.patch', $user->id) }}" method="POST">
+                                @if ($user->id != '1')
+                                    <form action="{{ route('admin.user.destroy', $user->id) }}" method="post">
                                         @csrf
-                                        @method('patch')
-                                        <button class="btn btn-secondary btn-sm">Make Admin</button>
-                                    </form>
-                                @else
-                                    <form action="{{ route('admin.user.patch', $user->id) }}" method="post">
-                                        @csrf
-                                        @method('patch')
-                                        <button class="btn btn-danger btn-sm">Remove Admin</button>
+                                        @method('delete')
+                                        <button class="btn btn-danger btn-sm">Delete</button>
                                     </form>
                                 @endif
-
+                            </td>
+                            <td>
+                                @if ($user->id != '1')
+                                    @if ($user->status->role != 'admin')
+                                        <form action="{{ route('admin.user.patch', $user->id) }}" method="POST">
+                                            @csrf
+                                            @method('patch')
+                                            <button class="btn btn-secondary btn-sm">Make Admin</button>
+                                        </form>
+                                    @else
+                                        <form action="{{ route('admin.user.patch', $user->id) }}" method="post">
+                                            @csrf
+                                            @method('patch')
+                                            <button class="btn btn-danger btn-sm">Remove Admin</button>
+                                        </form>
+                                    @endif
+                                @endif
                             </td>
                         </tr>
                     @endforeach

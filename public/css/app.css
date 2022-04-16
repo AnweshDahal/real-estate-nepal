@@ -479,6 +479,9 @@ textarea {
   background-color: red;
 }
 
+.comment-card {
+  scroll-snap-align: start;
+}
 .comment-card .card-body .card-title {
   font-size: 1.5rem;
 }
@@ -493,6 +496,28 @@ textarea {
 }
 .comment-card .card-body .comment-form .button-wrapper {
   text-align: right;
+}
+
+.comments {
+  height: 390px;
+  overflow-y: scroll;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+}
+.comments::-webkit-scrollbar {
+  width: 5px;
+  margin-right: -5px;
+}
+.comments::-webkit-scrollbar-track {
+  background: transparent;
+}
+.comments::-webkit-scrollbar-thumb {
+  background-color: #29292955;
+  max-height: 130px;
+  border-radius: 5px;
+}
+.comments::-webkit-scrollbar-thumb:hover {
+  background-color: #424242;
 }
 
 .map-container {

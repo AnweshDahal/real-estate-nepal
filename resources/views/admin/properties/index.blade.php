@@ -32,13 +32,13 @@
                                 <td scope="row">{{ $property->id ?? '-' }}</td>
                                 <td><a href="{{ route('property.show', $property->id) }}"
                                         class="link">{{ $property->property_name ?? '-' }}</a></td>
-                                <td>{{ $property->listing_type ?? '-' }}</td>
-                                <td>{{ $property->property_category ?? '-' }}</td>
+                                <td style="">{{ App\Models\Property::LISTING_TYPES[$property->listing_type] ?? '-' }}</td>
+                                <td>{{ App\Models\Property::PROPERTY_CATEGORY[$property->property_category] ?? '-' }}</td>
                                 <td>{{ $property->user->fullName() ?? '-' }}</td>
                                 <td>{{ $property->locality->locality_name ?? '-' }}</td>
                                 <td>{{ $property->address }}</td>
-                                <td>{{ $property->price }}</td>
-                                <td>{{ $property->property_size }} {{ $property->unit }}</td>
+                                <td>{{ $property->priceForHumans() }}</td>
+                                <td>{{ $property->property_size }} {{ App\Models\Property::UNITS[$property->unit] }}</td>
                                 <td>{{ $property->description }}</td>
                                 <td>
                                     <form action="{{ route('admin.property.destroy', $property->id) }}" method="post">

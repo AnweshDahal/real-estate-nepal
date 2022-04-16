@@ -70,7 +70,7 @@
                                 </h2>
                                 <p class="medium text-theme-blue text-center contact mb-0">
                                     @if (auth()->check())
-                                        {{ $property->user->phone_number }}
+                                        <a href="tel:{{ $property->user->phone_number }}" class="link">{{ $property->user->phone_number }}</a>
                                     @else
                                         {{ 'XXX-XXX-XXXX' }}
                                     @endif
@@ -116,11 +116,14 @@
                             <div class="card-title light">Comments</div>
                             <div class="comment-form">
                                 <form action={{ route('comment.store') }} method="POST" id="commentForm"
-                                    class="mb-3">
+                                    class="mb-3 d-flex">
                                     @csrf
                                     <input type="hidden" name="property_id" id="property_id" value="{{ $property->id }}">
-                                    <div class="form-group mb-3">
+                                    <div class="form-group col-10 me-2">
                                         <input type="text" name="comment" id="comment" class="form-control">
+                                    </div>
+                                    <div class="form-group col-1 d-flex">
+                                        <input type="submit" value="Submit" class="btn btn-custom-success">
                                     </div>
                                 </form>
                             </div>
@@ -132,11 +135,11 @@
                         <div class="comments d-flex flex-column-reverse">
                             @if (!$property->comments->isEmpty())
                                 @foreach ($property->comments as $comment)
-                                    <div class="card mb-3">
+                                    <div class="card mb-3 comment-card">
                                         <div class="comment-details d-flex justify-content-between p-2">
                                             <span class="commentor">{{ $comment->poster->fullName() }}</span>
                                             <span
-                                                class="comment-date text-muted medium">{{ Carbon\Carbon::parse($comment->created_at)->format('F d') }}</span>
+                                                class="comment-date text-muted medium">{{ Carbon\Carbon::parse($comment->created_at)->diffForHumans() }}</span>
                                         </div>
                                         <div class="card-body">
                                             <p>
