@@ -36,6 +36,7 @@
                         @else
                             <h2 class="thin">No Result found for {{ $locality->locality_name }}</h2>
                         @endif
+                        {{ $properties->links() }}
                     </div>
                     <div class="col-12 col-md-12 col-lg-6 p-3 full-height">
                         <div class="map-container">

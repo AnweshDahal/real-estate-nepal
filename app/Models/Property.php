@@ -43,16 +43,16 @@ class Property extends Model
 
     // Listing Types
     const LISTING_TYPES = [
-        'SALE' => 'SALE',
-        'RENT' => 'RENT',
+        'SALE' => 'Sale',
+        'RENT' => 'Rent',
     ];
 
     // Property Categories
     const PROPERTY_CATEGORY = [
-        'LAND' => 'LAND',
-        'HOUSE' => 'HOUSE',
-        'APARTMENT' => 'APARTMENT',
-        'ROOM' => 'ROOM',
+        'LAND' => 'Land',
+        'HOUSE' => 'House',
+        'APARTMENT' => 'Apartment',
+        'ROOM' => 'Room',
     ];
 
     // Property Units
@@ -91,5 +91,14 @@ class Property extends Model
     public function visitRequest()
     {
         return $this->hasMany(VisitRequest::class);
+    }
+
+    public function priceForHumans(){
+        $price = $this->price;
+
+        if($price>1000000000000) return round(($price/1000000000000),1).' trillion';
+        else if($price>1000000000) return round(($price/1000000000),1).' billion';
+        else if($price>1000000) return round(($price/1000000),1).' million';
+        else if($price>1000) return round(($price/1000),1).' thousand';
     }
 }

@@ -1,25 +1,24 @@
-.show-page{
+.show-page {
     background-color: $gray;
     @include default-font;
     padding: 60px 0px;
 }
 .show-property-container {
     margin: 0px auto;
-    width: 90% ;
-
+    width: 90%;
 }
 
-.description-card{
+.description-card {
     padding: 1.5em;
     margin-inline: 1em;
     background-color: $gray;
     border-radius: 0.4em;
 }
 
-.user-info{
+.user-info {
     display: flex;
     flex-direction: column;
-    .profile-avatar{
+    .profile-avatar {
         width: 30%;
         margin: 0 auto;
         // text-align: center;
@@ -28,19 +27,15 @@
             border-radius: 0.5em;
         }
     }
-    .user-details  {
+    .user-details {
         display: inline-block;
         width: 100%;
-        .username{
+        .username {
             font-size: 1.25rem;
             margin-bottom: 10px;
         }
-        
     }
 }
-
-
-
 
 .property-thumbnail {
     img {
@@ -53,20 +48,20 @@
     font-size: 2rem;
 }
 
-.address-card{
+.address-card {
     background-color: red;
 }
 
-.comment-card{
+.comment-card {
+    scroll-snap-align: start;
     .card-body {
         .card-title {
             font-size: 1.5rem;
         }
 
-        .comment-form{
-            .form-group{
-                .comment
-                {
+        .comment-form {
+            .form-group {
+                .comment {
                     border: 0px;
                     padding: 10px;
                     border-bottom: 1px solid $gray;
@@ -80,6 +75,31 @@
             .button-wrapper {
                 text-align: right;
             }
+        }
+    }
+}
+
+.comments {
+    height: 390px;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+
+    &::-webkit-scrollbar {
+        width: 5px;
+        margin-right: -5px;
+
+    }
+
+    &::-webkit-scrollbar-track{
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        background-color: #29292955;
+        max-height: 130px;
+        border-radius: 5px;
+        &:hover {
+            background-color: $dark-gray;
         }
     }
 }

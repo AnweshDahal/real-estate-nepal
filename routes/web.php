@@ -37,8 +37,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/property', [PropertyController::class, 'index'])->name('property.index');
 Route::get('/property/create', [PropertyController::class, 'create'])->name('property.create');
 Route::post('/property', [PropertyController::class, 'store'])->name('property.store');
+Route::get('/property/search', [PropertyController::class, 'search'])->name('property.search');
 Route::get('/property/{property}', [PropertyController::class, 'show'])->name('property.show');
-Route::post('/property/search', [PropertyController::class, 'search'])->name('property.search');
+
 
 // Comment Routes
 Route::post('/comment', [CommentController::class, 'store'])->name('comment.store');
@@ -88,20 +89,3 @@ Route::group([
     Route::delete('/images/{image}', [ImageController::class, 'destroy'])->name('image.destroy');
     // Route::get('/localities', [LocalityController_::class, 'index'])->name('locality.index');
 });
-// Admin: Get/ Delete all/ select Users
-// Route::get('/users', [AdminUserController::class, 'index'])->name('admin.user.index');
-// Route::delete('/users/{id}', [AdminUserController::class, 'delete'])->name('admin.user.delete');
-// Admin: Get/ Delete all/ select Properties
-// Route::get('/properties', [AdminProperties::class, 'index'])->name('admin.properties.index');
-// Route::detete('/properties/{id}', [AdminProperties::class, 'delete'])->name('admin.user.delete');
-// Admin: Get/ Delete all/ select Comments
-// Route::get('/properties', [AdminProperties::class, 'index'])->name('admin.properties.index');
-// Route::detete('/properties/{id}', [AdminProperties::class, 'delete'])->name('admin.user.delete');
-// Admin: Get/ Delete all/ select Images
-// Route::get('/properties', [AdminProperties::class, 'index'])->name('admin.properties.index');
-// Route::detete('/properties/{id}', [AdminProperties::class, 'delete'])->name('admin.user.delete');
-// Admin: CRUD Localities
-// Route::get('/properties', [AdminProperties::class, 'index'])->name('admin.properties.index');
-// Route::detete('/properties/{id}', [AdminProperties::class, 'delete'])->name('admin.user.delete');
-// Route::get('/properties', [AdminProperties::class, 'index'])->name('admin.properties.index');
-// Route::detete('/properties/{id}', [AdminProperties::class, 'delete'])->name('admin.user.delete');

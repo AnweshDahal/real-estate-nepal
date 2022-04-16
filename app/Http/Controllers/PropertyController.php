@@ -77,10 +77,10 @@ class PropertyController extends Controller
         return view('properties.show', compact('property', 'thumbnail'));
     }
 
-    public function search(Request $request)
+    public function search()
     {
-        $properties = Property::where('locality_id', $request->id)->get();
-        $locality = Locality::findOrFail($request->id);
+        $properties = Property::where('locality_id', request()->query('id'))->paginate(1)->withQueryString();
+        $locality = Locality::findOrFail(request()->input('id'));
         
         return view('properties.search', compact('properties', 'locality'));
     }

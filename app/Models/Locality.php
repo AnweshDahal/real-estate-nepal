@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+use App\Models\Property;
+
 class Locality extends Model
 {
     use HasFactory, SoftDeletes;
@@ -26,4 +28,8 @@ class Locality extends Model
         'updated_at',
         'deleted_at',
     ];
+
+    public function properties(){
+        return $this->belongsToMany(Property::class, 'locality_id');
+    }
 }
