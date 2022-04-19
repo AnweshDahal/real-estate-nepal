@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Models\UserStatus;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class RegisterController extends Controller
 {
@@ -67,13 +69,22 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'first_name' => $data['firstName'],
-            'middle_name' => $data['middleName'],
-            'last_name' => $data['lastName'],
-            'email' => $data['email'],
-            'phone_number' => $data['phoneNumber'],
-            'password' => Hash::make($data['password']),
-        ]);
+        return DB::transaction(function () use ($data) {
+            $user = User::create([
+                'first_name' => $data['firstName'],
+                'middle_name' => $data['middleName'],
+                'last_name' => $data['lastName'],
+                'email' => $data['email'],
+                'phone_number' => $data['phoneNumber'],
+                'password' => Hash::make($data['password']),
+            ]);
+
+            $userStatus = UserStatus::create([
+                'user_id' => $user->id,
+                'role' => UserStatus::ROLES['user']
+            ]);
+
+            return $user;
+        }); 
     }
 }

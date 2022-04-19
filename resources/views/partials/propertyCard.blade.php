@@ -14,7 +14,7 @@
     <div class="card-body">
         <div class="price">
             <div class="text-theme-blue">Rs.</div>
-            <div class="amount">{{ number_format($price, 2) }}</div>
+            <div class="amount">&nbsp;{{ number_format($price,2, '.', ',') }}</div>
         </div>
         <div class="house-details-1">
             <span class="name">{{ $property_name }}</span>
