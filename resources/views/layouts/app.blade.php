@@ -102,16 +102,22 @@
                         RealEstate Nepal
                     </p>
                     <p class="medium">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique id tempore nemo libero
-                        voluptatibus? Corporis, sint, saepe, voluptatum magnam provident sapiente beatae deserunt
-                        ipsum doloribus aspernatur eveniet reprehenderit distinctio iure.
+                        Find Properties that are for sale and rent in Nepal. You can search properties in Kathmandu,
+                        Lalitpur, Bhaktapur and other regions across Nepal. Our Real Estate Listing Application
+                        is fast and easy to use. Buyers can search for properties using out ever gowning list of covered
+                        localities. Each property is displayed conveniently using Maps and popups for your ease of use.
                     </p>
                 </div>
                 <div class="col-12 col-md-12 col-lg-2">
                     <ul class="footer-links">
-                        <li class="medium"><a href="#">Buy Properties</a></li>
-                        <li class="medium"><a href="#">Sell Properties</a></li>
-                        <li class="medium"><a href="#">Rent Properties</a></li>
+                        <li class="medium"><a href="{{ route('property.index', ['type' => 'buy']) }}">Buy
+                                Properties</a></li>
+                        @if (auth()->check())
+                            <li class="medium"><a href="{{ route('property.create') }}">Sell Properties</a>
+                            </li>
+                        @endif
+                        <li class="medium"><a href="{{ route('property.index', ['type' => 'rent']) }}">Rent
+                                Properties</a></li>
                         @if (Route::has('register'))
                             <li class="medium"><a href="#">Register</a></li>
                         @endif
@@ -120,9 +126,9 @@
                 <div class="col-12 col-md-12 col-lg-2">
                     <ul class="footer-links">
                         <li class="medium">About Us</li>
-                        <li><a href="#">Get to Know Us</a></li>
-                        <li><a href="#">Work With Us</a></li>
-                        <li><a href="#">Company Information</a></li>
+                        <li><a href="https://github.com/AnweshDahal">Get to Know Us</a></li>
+                        {{-- <li><a href="#">Work With Us</a></li> --}}
+                        {{-- <li><a href="#">Company Information</a></li> --}}
                     </ul>
                 </div>
                 <div class="col-12 col-md-12 col-lg-5 d-flex align-items-start justify-content-end ">
