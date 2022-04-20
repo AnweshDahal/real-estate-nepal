@@ -61,7 +61,7 @@
                                 class="medium">{{ $property->user->id }}</span></span>
                         <div class="user-info mx-3 mb-3 mt-2">
                             <div class="profile-avatar ">
-                                <img src="https://avatars.dicebear.com/api/open-peeps/:{{ $property->user->fullName() }}.svg"
+                                <img src="https://avatars.dicebear.com/api/initials/:{{ $property->user->fullName() }}.svg"
                                     alt="">
                             </div>
                             <div class="user-details">
@@ -165,7 +165,6 @@
         document.addEventListener('DOMContentLoaded', (event) => {
             // Script for leaflet.js
             var map = L.map('map', {
-                dragging: false,
                 scrollWheelZoom: "center",
             }).setView({
                 lon: {{ $property->longitude }},

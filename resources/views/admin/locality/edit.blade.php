@@ -5,7 +5,7 @@
 @endsection
 
 @section('contents')
-    <div class="card m-auto">
+    <div class="card m-auto mb-3">
         <div class="card-body">
             <h1 class="card-title">Localities: {{ $locality->locality_name }}</h1>
             <h6 class="card-subtitle mb-2 text-muted">Add a new Locality</h6>
