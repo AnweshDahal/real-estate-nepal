@@ -157,9 +157,10 @@
                                         Sign Up
                                     </button>
 
-                                    <a href="#" class="btn btn-custom-theme-blue medium w-100 mb-2">
+                                    {{-- <a href="#" class="btn btn-custom-theme-blue medium w-100 mb-2">
                                         <i class="bi bi-facebook"></i> <span>Sign Up using Facebook</span>
-                                    </a>
+                                    </a> --}}
+                                    <a href="{{ route('login') }}" class="mt-2 btn btn-link">Already have an account?</a>
                                 </div>
                             </form>
                     </div>

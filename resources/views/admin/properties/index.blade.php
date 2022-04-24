@@ -43,7 +43,7 @@
                             <td>{{ $property->property_size }} {{ App\Models\Property::UNITS[$property->unit] }}</td>
                             <td>{{ $property->description }}</td>
                             <td>
-                                <form action="{{ route('admin.property.destroy', $property->id) }}" method="post" onsubmit="confirm('Are you sure')">
+                                <form action="{{ route('admin.property.destroy', $property->id) }}" method="post">
                                     @csrf
                                     @method('delete')
                                     <button class="btn btn-danger btn-sm" >Delete</button>

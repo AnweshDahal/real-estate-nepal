@@ -40,7 +40,7 @@
             </div>
             <div class="col-6">
                 {{-- Property Category --}}
-                <h3 class="text-center">Properteis according to Categories</h3>
+                <h3 class="text-center">Properties according to Categories</h3>
                 <canvas id="category-bar" style="width: 100%; height: 500px;"></canvas>
             </div>
         </div>

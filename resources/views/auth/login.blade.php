@@ -58,15 +58,17 @@
                                     Sign In
                                 </button>
 
-                                <a href="#" class="btn btn-custom-theme-blue medium w-100 mb-2">
+                                {{-- <a href="#" class="btn btn-custom-theme-blue medium w-100 mb-2">
                                     <i class="bi bi-facebook"></i> <span>Sign In using Facebook</span>
-                                </a>
+                                </a> --}}
 
-                                @if (Route::has('password.request'))
+                                {{-- @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
-                                @endif
+                                @endif --}}
+
+                                <a href="{{ route('register') }}" class="btn btn-link">Don't Have an Account?</a>
                             </div>
                         </form>
                     </div>
