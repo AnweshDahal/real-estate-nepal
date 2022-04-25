@@ -189,6 +189,7 @@ header .row .brand-logo .brand-name {
 footer {
   margin-top: auto;
   padding: 0px;
+  border-top: 1px solid #efefef;
 }
 footer .footer-top,
 footer .footer-bottom {
@@ -300,6 +301,35 @@ textarea {
   font-family: Inter, sans-serif;
 }
 
+.searchbar {
+  display: flex;
+  width: 40%;
+  border-radius: 0.4em;
+  overflow: hidden;
+}
+.searchbar .searchbar-text {
+  width: 95%;
+  padding: 15px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.searchbar .searchbar-text,
+.searchbar .searchbar-btn {
+  border: none;
+  background-color: #fff;
+  outline: none;
+}
+.searchbar .searchbar-btn {
+  width: 5%;
+  padding: 0px;
+  font-size: 1rem;
+  min-width: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .property-card {
   width: 100%;
   height: auto;
@@ -324,7 +354,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #00000095;
+  background-color: rgba(0, 0, 0, 0.5843137255);
   transition: opacity ease-in-out 100ms;
   margin: 0;
   padding: 0;
@@ -393,6 +423,9 @@ textarea {
 .property-card .card-body .house-details-1 .name {
   font-size: 0.85rem;
   margin-right: 10px;
+  white-space: nowrap;
+  width: 100%;
+  text-overflow: ellipsis;
 }
 .property-card .card-body .house-details-1 .specs {
   font-weight: 700;
@@ -416,6 +449,7 @@ textarea {
 }
 .property-card .card-body .house-details-2 .address, .property-card .card-body .house-details-2 .size {
   white-space: nowrap;
+  width: 50%;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -512,7 +546,7 @@ textarea {
   background: transparent;
 }
 .comments::-webkit-scrollbar-thumb {
-  background-color: #29292955;
+  background-color: rgba(41, 41, 41, 0.3333333333);
   max-height: 130px;
   border-radius: 5px;
 }
@@ -637,7 +671,7 @@ textarea {
   overflow: hidden;
 }
 .search-card .fh {
-  height: 600px;
+  height: 700px;
 }
 
 .search-container {
@@ -648,7 +682,7 @@ textarea {
   margin: 10px;
   border: 1px solid #eeeeee;
   border-radius: 0.4em;
-  box-shadow: 0px 0px 18px #e0e0e0d1;
+  box-shadow: 0px 0px 18px rgba(224, 224, 224, 0.8196078431);
 }
 .search-result-list-item .row .img-col img {
   width: 80px;

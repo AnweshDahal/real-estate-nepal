@@ -91,6 +91,9 @@
             .name{
                 font-size: 0.85rem;
                 margin-right: 10px;
+                white-space: nowrap;
+                width: 100%;
+                text-overflow: ellipsis;
             }
             .specs{
                 font-weight: 700;
@@ -115,6 +118,7 @@
 
             .address, .size {
                 white-space: nowrap;
+                width: 50%;
                 overflow: hidden;
                 text-overflow: ellipsis;
             }

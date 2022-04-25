@@ -55,14 +55,14 @@
                                     <img src="{{ asset('storage/img/property/' . $property->image->first()->file_name) }}"
                                         alt="" class="thumbnail">
                                     <p class="property-info d-flex flex-column">
-                                        <span class="property-name medium">{{ $property->property_name }} <span
+                                        <span class="property-name normal"><a href="{{ route('property.show', $property->id) }}" class="link text-reset text-decoration-none">{{ $property->property_name }}</a> <span
                                                 class="text-muted light">#{{ $property->id }}</span></span>
                                         <span class="address text-muted medium">
                                             {{ $property->address }}
                                         </span>
                                         <span class="medium price">
                                             <span class="bold text-theme-blue">Rs.</span> <span
-                                                class="bold">{{ $property->price }}</span>
+                                                class="bold">{{ number_format($property->price, 2, '.', ',') }}</span>
                                         </span>
                                     </p>
                                 </div>
@@ -81,14 +81,14 @@
                                     <img src="{{ asset('storage/img/property/' . $bookmark->property->image->first()->file_name) }}"
                                         alt="" class="thumbnail">
                                     <p class="property-info d-flex flex-column">
-                                        <span class="property-name medium">{{ $bookmark->property->property_name }} <span
+                                        <span class="property-name normal"><a href="{{ route('property.show', $bookmark->property->id) }}" class="link text-reset text-decoration-none">{{ $bookmark->property->property_name }}</a> <span
                                                 class="text-muted light">#{{ $bookmark->property->id }}</span></span>
                                         <span class="address text-muted medium">
                                             {{ $bookmark->property->address }}
                                         </span>
                                         <span class="medium price">
                                             <span class="bold text-theme-blue">Rs.</span> <span
-                                                class="bold">{{ $bookmark->property->price }}</span>
+                                                class="bold">{{ number_format($bookmark->property->price, 2, '.', ',') }}</span>
                                         </span>
                                     </p>
                                 </div>

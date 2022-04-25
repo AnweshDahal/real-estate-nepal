@@ -96,9 +96,9 @@ class Property extends Model
     public function priceForHumans(){
         $price = $this->price;
 
-        if($price>1000000000000) return round(($price/1000000000000),1).' trillion';
-        else if($price>1000000000) return round(($price/1000000000),1).' billion';
-        else if($price>1000000) return round(($price/1000000),1).' million';
-        else if($price>1000) return round(($price/1000),1).' thousand';
+        if($price>1000000000000) return round(($price/1000000000000),1).' tn';
+        else if($price>1000000000) return round(($price/1000000000),1).' bn';
+        else if($price>1000000) return round(($price/1000000),1).' m';
+        else if($price>1000) return round(($price/1000),1).' k';
     }
 }

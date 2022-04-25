@@ -20,7 +20,7 @@
                                 <input type="hidden" name="property_id" value="{{ $property->id }}">
                                 <button type="submit"
                                     class="btn {{ auth()->user()->hasLiked($property)? 'btn-primary': 'btn-outline-primary' }}"><i
-                                        class="bi bi-bookmark-fill"></i> Bookmark</button>
+                                        class="bi bi-bookmark-fill"></i> {{ auth()->user()->hasLiked($property)? 'Bookmarked': 'Bookmark' }}</button>
                             </form>
 
                         @endauth
@@ -48,7 +48,7 @@
                                     </span>
                                     <span>
                                         <span class="bold">Price: </span> <span class="text-theme-blue medium">Rs.
-                                        </span>{{ $property->price }}
+                                        </span>{{ number_format($property->price, 2, '.', ',') }}
                                     </span>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                                 class="medium">{{ $property->user->id }}</span></span>
                         <div class="user-info mx-3 mb-3 mt-2">
                             <div class="profile-avatar ">
-                                <img src="https://avatars.dicebear.com/api/open-peeps/:{{ $property->user->fullName() }}.svg"
+                                <img src="https://avatars.dicebear.com/api/initials/:{{ $property->user->fullName() }}.svg"
                                     alt="">
                             </div>
                             <div class="user-details">
@@ -70,7 +70,8 @@
                                 </h2>
                                 <p class="medium text-theme-blue text-center contact mb-0">
                                     @if (auth()->check())
-                                        <a href="tel:{{ $property->user->phone_number }}" class="link">{{ $property->user->phone_number }}</a>
+                                        <a href="tel:{{ $property->user->phone_number }}"
+                                            class="link">{{ $property->user->phone_number }}</a>
                                     @else
                                         {{ 'XXX-XXX-XXXX' }}
                                     @endif
@@ -164,7 +165,6 @@
         document.addEventListener('DOMContentLoaded', (event) => {
             // Script for leaflet.js
             var map = L.map('map', {
-                dragging: false,
                 scrollWheelZoom: "center",
             }).setView({
                 lon: {{ $property->longitude }},

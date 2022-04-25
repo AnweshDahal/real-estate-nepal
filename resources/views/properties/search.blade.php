@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+
     <div class="search-container d-flex align-items-center justify-content-center">
         <div class="container d-flex flex-column align-items-center justify-content-center">
             <div class="card search-card w-100">

@@ -10,9 +10,9 @@
             <h1 class="card-title">Images</h1>
             <h6 class="card-subtitle mb-2 text-muted">View all Images available in the system</h6>
         </div>
-        <div class="row mt-3 p-3 d-flex">
+        <div class="row mt-3 mb-3 p-3 d-flex">
             @foreach ($images as $image)
-                <div class="col-6 col-md-4 col-lg-3 d-flex">
+                <div class="col-6 col-md-4 col-lg-3 d-flex mb-3">
                     <div class="card" style="width: 18rem;">
                         <img src="{{ asset('storage/img/property/' . $image->file_name) }}" class="thumbnail"
                             alt="{{ $image->property->property_name }}">
@@ -31,6 +31,7 @@
                     </div>
                 </div>
             @endforeach
+            {{-- {{ $images->links() }} --}}
         </div>
     </div>
 @endsection

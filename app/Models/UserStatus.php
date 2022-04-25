@@ -14,7 +14,7 @@ class UserStatus extends Model
     protected $table = 'user_statuses';
 
     // Attributes that are mass assignable
-    protected $filllable = [
+    protected $fillable = [
         'user_id',
         'role'
     ];

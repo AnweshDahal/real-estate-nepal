@@ -79,7 +79,7 @@ class PropertyController extends Controller
 
     public function search()
     {
-        $properties = Property::where('locality_id', request()->query('id'))->paginate(1)->withQueryString();
+        $properties = Property::where('locality_id', request()->query('id'))->paginate(4)->withQueryString();
         $locality = Locality::findOrFail(request()->input('id'));
         
         return view('properties.search', compact('properties', 'locality'));

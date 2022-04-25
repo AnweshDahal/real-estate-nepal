@@ -5,7 +5,7 @@
 @endsection
 
 @section('contents')
-    <div class="card m-auto">
+    <div class="card m-auto mb-3">
         <div class="card-body">
             <h1 class="card-title">Localities</h1>
             <h6 class="card-subtitle mb-2 text-muted">View all localities available in the system</h6>
