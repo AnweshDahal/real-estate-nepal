@@ -19,7 +19,8 @@
             {{ $sentVisitRequest->visit_date }}
         </span>
         <span class="username medium">
-            {{ $sentVisitRequest->requesteeInfo->fullname() }}
+            <a href="{{ route('property.show', $sentVisitRequest->property_id) }}" class="text-decoration-none text-reset"> {{ $sentVisitRequest->requesteeInfo->fullname() }}</a>
         </span>
+        
     </div>
 </div>

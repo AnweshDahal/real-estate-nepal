@@ -18,6 +18,7 @@ class VisitRequestController extends Controller
 
         return view('visitRequests.index', compact('recievedVisitRequests', 'sentVisitRequests'));
     }
+    
     public function store(Request $request){
         
         if (Property::findOrFail($request->property_id)->user->id == auth()->user()->id){
